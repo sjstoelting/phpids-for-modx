@@ -14,7 +14,7 @@
  * @package PHPIDS
  * @license LGPL
  * @since 2011/10/17
- * @version 0.6.5.alpha.6
+ * @version 0.7.alpha.1
  */
 class modulePHPIDS
 {
@@ -421,14 +421,43 @@ class modulePHPIDS
               ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin ;';
 
       $modx->db->query($sSQL);
+      $this->updateLogTable($sTableName);
 
     } catch (Exception $e) {
       $this->logError($e);
     }
   } // createLogTable
-
-
+  
   /**
+   * Update the log table.
+   *
+   * @param string $sTableName
+   */
+  public function updateLogTable($sTableName)
+  {
+    global $modx;
+
+    try {
+      $sSQL = 'SELECT COUNT(*) ColumnExists '
+             .'FROM information_schema.COLUMNS '
+             .'WHERE TABLE_SCHEMA = \'' . $modx->db->config['dbase'] . '\' '
+             .'AND TABLE_NAME = \'' . $sTableName . '\' '
+             .'AND COLUMN_NAME = \'ip2\'';
+
+    $rRecordset =  $modx->db->query($sSQL);
+    if ($row = mysql_fetch_object($rRecordset)) {
+        if ($row->ColumnExists == 1) {
+            $sSQL = 'ALTER TABLE ' . $sTableName . ' ADD ip2 VARCHAR(15) NOT NULL AFTER ip';
+            $modx->db->query($sSQL);
+        }
+    }
+
+    } catch (Exception $e) {
+      $this->logError($e);
+    }
+  } // updateLogTable
+
+    /**
    * Returns the complete HTML
    *
    * @param string $sJavaScript

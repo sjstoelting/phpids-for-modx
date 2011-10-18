@@ -8,13 +8,8 @@
  * @package PHPIDS
  * @license LGPL
  * @since 2011/10/17
- * @version 0.6.5.alpha.6
- * <strong>0.6.5.alpha 6</strong> A module to include PHPIDS into MODx to view logs of and prevent intrusions
-=======
- * @since 2011/07/31
- * @version 0.6.5.alpha 6
- * <strong>0.6.5.alpha 6</strong> A module to include PHPIDS into MODx to view logs of and prevent intrusions
->>>>>>> .r76
+ * @version 0.7.alpha.7
+ * <strong>0.7 alpha 1</strong> A module to include PHPIDS into MODx to view logs of and prevent intrusions
  *
  *
  * Module Configuration

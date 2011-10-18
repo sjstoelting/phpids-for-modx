@@ -10,9 +10,9 @@
  * @package PHPIDS
  * @license LGPL
  * @since 2011/10/17
- * @version 0.6.5.alpha.6
+ * @version 0.7.alpha.1
  * 
- * <strong>0.6.5.alpha </strong> A plugin to include PHPIDS into MODx to log and prevent intrusions
+ * <strong>0.7 alpha 1</strong> A plugin to include PHPIDS into MODx to log and prevent intrusions
  *
  * If you install PHPIDS into a public path, you should remove webaccess to the
  * lib path, for example with the attached .htaccess file.
