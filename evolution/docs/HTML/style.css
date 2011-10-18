@@ -1,0 +1,32 @@
+.img {
+	border:0;
+}
+p.p1 {
+  padding-left: 10px;
+  font-size: 125%;
+}
+p.p2 {
+  padding-left: 35px;
+  font-size: 110%;
+}
+p.p3 {
+  padding-left: 60px;
+  font-size: 100%;
+}
+p.p4 {
+  padding-left: 85px;
+  font-size: 90%;
+}
+pre code {
+  background-color: #EEEEEE !important;
+  border: medium none !important;
+  font-size: 12px !important;
+  padding: 0 !important;
+  font: 12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
+}
+td {
+   border:1px solid #000;
+   vertical-align:top;
+   overflow:hidden;
+   padding:8px;
+}

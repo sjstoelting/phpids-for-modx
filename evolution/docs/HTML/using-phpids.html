@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Documentation PHPIDS for MODx: Using PHPIDS</title>
+
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+  </head>
+  <body>
+    <h1><a name="Using PHPIDS"><span /></a>Using PHPIDS</h1>
+    <p>
+      To see possible attacks, that are logged to the database, click on 
+      "Modules" &#8658; "PHPIDS". This does only work, if you have configured the 
+      module with <code>Use database? = True</code>.
+    </p>
+    <p>
+      There are two tab-sheets, one shows the list of possible attacks, and the 
+      other one shows a list of blocked IP addresses.
+    </p>
+    <p>
+      The table are both completely sortable by clicking on the header of a 
+      column.
+    <p>
+    <h2><a name="The Log Data tab"><span /></a>The Log Data tab</h2>
+    <p>
+      The Log Data tab shows you possible impacts:
+    </p>
+    <p>
+      <image style="height: 590px; width: 1111px;" alt="Module: Log Data tab" src="http://phpids-for-modx.googlecode.com/svn/trunk/evolution/docs/images/instruction-examples/instruction-using-module-1.jpg" />    
+    </p>
+    <p>
+      The IP address of the attacker is a link, that shows further information 
+      in the RIPE database.
+    </p>
+    <p>
+      If you want to block an attacker by his IP address, you have to click on 
+      the button "Block IP". After you've confirmed, that you want to block the 
+      shown IP Address, all users with this IP address are forwarded as defined 
+      in Redirect intrusion to the document ID (0 means no redirection). For 
+      example use a static HTML page, where an attacker can do no harm to your 
+      server.
+    </p>
+    <p>
+      <image style="height: 642px; width: 1112px;" alt="Module: Block IP addresses" src="http://phpids-for-modx.googlecode.com/svn/trunk/evolution/docs/images/instruction-examples/instruction-using-module-2.jpg" />    
+    </p>
+    <h2><a name="The Blocked Data tab"><span /></a>The Blocked Data tab</h2>
+    <p>
+      On the Blocked Data tab you see the currently blocked IP addresses, 
+      that are redirected.
+    </p>
+    <p>
+      <image style="height: 180px; width: 580px;" alt="Module: Blocked IP addresses" src="http://phpids-for-modx.googlecode.com/svn/trunk/evolution/docs/images/instruction-examples/instruction-using-module-3.jpg" />    
+    </p>
+    <p>
+      The IP address of the attacker is a link, that shows further information 
+      in the RIPE database.
+    </p>
+    <p>
+      To unblock a blocked IP Address, just click on the button "Unblock IP" and 
+      confirm the dialog:
+    </p>
+    <p>
+      <image style="height: 180px; width: 580px;" alt="Module: Unblocked IP addresses" src="http://phpids-for-modx.googlecode.com/svn/trunk/evolution/docs/images/instruction-examples/instruction-using-module-3.jpg" />    
+    </p>
+    <h2><a name="The Extended Options tab"><span /></a>The Extended Options tab</h2>
+    <p>
+      This checks, whether there is a filter update available at phpids.org, or 
+      not. Currently there are three possible messages:
+    </p>
+    <ul>
+      <li>There is no filter update available.</li>
+      <li>There is a filter update from {update file date} available</li>
+      <li>PHPIDS Filter URI is not available.</li>
+    </ul>
+    <p>
+      No filter update available means, that everything is OK. If there is a 
+      filter update available, then there are two possible options:
+    </p>
+    <p>
+      If you have full rights on the filter file, located in the root directory 
+      of your PHPIDS lib folder, then you only have to push the button "Update 
+      Filter". Than the new filter data will be read from phpids.org and written 
+      to your filter.
+    </p>
+    <p>
+      The second option is to download the filter from phpids.org and upload it 
+      manually to your system.
+    </p>
+    <p>
+      "PHPIDS Filter URI is not available" means, that the module can't connect 
+      to the filter. This may be for example, that there is a problem at 
+      phpids.org.
+    </p>
+    <h3><a name"Download the intrusion data as CSV file"><span /></a>Download the intrusion data as CSV file</h3>
+    <p>
+      With the link "Download intrusions as CSC" file, you get the complete data 
+      of the intrusion table. The delimiter and the enclosure for the CSV files 
+      are configurable at the module configuration.
+    </p>
+    <h3><a name="Empty log table"><span /></a>Empty log table</h3>
+    <p>
+      It is now possible, to empty the log table, but afterward all entries 
+      about previous possible attacks are lost.
+    </p>
+    <p>
+      <image style="height: 369px; width: 778px;" alt="Module: Extended Options" src="http://phpids-for-modx.googlecode.com/svn/trunk/evolution/docs/images/instruction-examples/instruction-using-module-4.jpg" />    
+    </p>
+  </body>
+</html>
+
