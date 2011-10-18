@@ -7,7 +7,7 @@
  * @link http://phpids.org/
  * @package PHPIDS
  * @license LGPL
- * @since 2011/10/17
+ * @since 2011/10/18
  * @version 0.7.alpha.7
  * <strong>0.7 alpha 1</strong> A module to include PHPIDS into MODx to view logs of and prevent intrusions
  *
@@ -16,7 +16,9 @@
  *
  * &useMODxBasePath=Use MODX base path?;list;true,false;true &basePath=PHPIDS path?;string;assets/lib/phpids/lib &useLogFile=Use log file?;list;true,false;false &useEmail=Use email?;list;true,false;true &useDatabase=Use database?;list;true,false;true &useMODxTablePrefix=Use MODX table prefix?;list;true,false;true &useMODxLog=Use MODX Log?;list;true,false;true &logFromImpact=Start logging from impact?;int;5 &sendMailFromImpact=Start sending mails from impact, high (around 15) or very high (around 25-50) impact?;int;15 &idsRecipients=Mail recipients (separated by comma);text; &idsSubject=Mail subject <br />(keep empty to use default);text; &SMTPServer=SMPT server;text; &SMTPPort=SMPT port <br />(default is 25, leave empty to use default);text; &SMTPAccount=SMPT account;text; &SMTPPassword=SMPT password;text; &mailFrom=E-Mail From Name<br> Only used with SMTP;text;PHPIDS;&useExceptions=Exceptions separated with pipes (|);text;&blockedDocumentID=ID of the MODx document, that blocked IPs would see, default is root;text&defaultTableEntries=Default table entries on start;text;20 &redirectIntrusionLevel=Redirect intrusions from a level (50 is very high);text;50 &redirectIntrusionID=Redirect intrusion to the document ID (0 means no redirection);text;0 &csvDelimiter=CSV delimiter (only one character);text;, &csvEnclosure=CSF enclosure (only one character);text;#
  *
- **/
+  * Requirements: MODx 1.0.5 or newer, PHP 5.1.6 or newer, PHPIDS 0.7
+ *
+**/
 $result = '';
 $sOrder = '';
 $sLimit = '';

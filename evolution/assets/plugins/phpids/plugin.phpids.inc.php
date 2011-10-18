@@ -9,7 +9,7 @@
  * @link http://phpids.org/
  * @package PHPIDS
  * @license LGPL
- * @since 2011/10/17
+ * @since 2011/10/18
  * @version 0.7.alpha.1
  * 
  * <strong>0.7 alpha 1</strong> A plugin to include PHPIDS into MODx to log and prevent intrusions
@@ -21,7 +21,7 @@
  * Getting started with the PHPIDS intrusion detection system
  * http://www.h-online.com/security/Getting-started-with-the-PHPIDS-intrusion-detection-system--/features/113163
  *
- * Requirements: MODx 1.0 or newer, PHP 5.1.2 or newer, PHPIDS 0.6.5
+ * Requirements: MODx 1.0.5 or newer, PHP 5.1.6 or newer, PHPIDS 0.7
  *
  * On page Systemevents check the entry OnWebPageInit
  *
