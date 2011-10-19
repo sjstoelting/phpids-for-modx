@@ -260,7 +260,7 @@ class phpidsAutoupdate {
    * @return string
    */
   private function getLastRulesUpdate() {
-    return date("d.m.Y H:i", filectime($this->phpids_base.self::FILENAME_RULES));
+    return date($this->_oTranslation->translate('date_time_format'), filectime($this->phpids_base.self::FILENAME_RULES));
   } // getLastRulesUpdate
  
   /**
@@ -268,7 +268,7 @@ class phpidsAutoupdate {
    * @return string
    */
   private function getLastConverterUpdate() {
-    return date("d.m.Y H:i", filectime($this->phpids_base.self::FILENAME_CONVERTER));
+    return date($this->_oTranslation->translate('date_time_format'), filectime($this->phpids_base.self::FILENAME_CONVERTER));
   } // getLastConverterUpdate
  
   /**
@@ -277,60 +277,60 @@ class phpidsAutoupdate {
   public function showVersionStatus() {
     $update_needed = false;
  
-    $result = "<table class='tableBorder'>\n";
-    $result .= "<tr><td class='tableHead' colspan='2'>IDS Version</td></tr>\n";
+    $result = '<table class="tableBorder">';
+    $result .= '<tr><td class="tableHead" colspan="2">IDS Version</td></tr>\n';
  
-    $result .= "<tr><td class='tableCell' valign='top'>Filter:</td>\n<td class='tableCell'>";
+    $result .= '<tr><td class="tableCell" valign="top">Filter:</td>\n<td class="tableCell">';
     
     if ($this->isRulesUpdated()) {
-      $result .=  "<span style='color: green;'>aktuell.</span>";
+      $result .=  '<span style="color: green;">aktuell.</span>';
     } else {
-      $result .=  "<span style='color: red;'>nicht aktuell.</span>";
+      $result .=  '<span style="color: red;">nicht aktuell.</span>';
       $update_needed = true;
     }
     
-    $result .= "<br />Letzte lokale &Auml;nderung: <strong>".$this->getLastRulesUpdate()."</strong><br />";
-    $result .= "Letzte &Auml;nderung auf php-ids.org: <strong>".$this->getLastFileUpdate(self::FILENAME_RULES)."</strong><br />";
-    $result .= "SHA-1 Hash: <br /> <code>".$this->getLocalFileHash(self::FILENAME_RULES)."</code>";
+    $result .= '<br />Letzte lokale &Auml;nderung: <strong>'.$this->getLastRulesUpdate().'</strong><br />';
+    $result .= 'Letzte &Auml;nderung auf php-ids.org: <strong>'.$this->getLastFileUpdate(self::FILENAME_RULES).'</strong><br />';
+    $result .= 'SHA-1 Hash: <br /> <code>'.$this->getLocalFileHash(self::FILENAME_RULES).'</code>';
     
     if (!$this->isRulesUpdated()) {
-      $result .= "(local)<br /> <code>".$this->getCurrentFileHash(self::FILENAME_RULES)."</code>(remote)";
+      $result .= '(local)<br /> <code>'.$this->getCurrentFileHash(self::FILENAME_RULES).'</code>(remote)';
     }
     
-    $result .= "</td></tr>";
+    $result .= '</td></tr>';
          
-    $result .= "<tr><td class='tableCell' valign='top'>Converter:</td>\n<td class='tableCell'>";
+    $result .= '<tr><td class="tableCell" valign="top">Converter:</td>\n<td class="tableCell">';
     
     if ($this->isConverterUpdated()) {
-      $result .=  "<span style='color: green;'>aktuell.</span>";
+      $result .=  '<span style="color: green;">aktuell.</span>';
     } else {
-      $result .=  "<span style='color: red;'>nicht aktuell.</span>";
+      $result .=  '<span style="color: red;">nicht aktuell.</span>';
       $update_needed = true;
     }
     
-    $result .= "<br />Letzte lokale &Auml;nderung: <strong>".$this->getLastConverterUpdate()."</strong><br />";
-    $result .= "Letzte &Auml;nderung auf php-ids.org: <strong>".$this->getLastFileUpdate(self::FILENAME_CONVERTER)."</strong><br />";
-    $result .= "SHA-1 Hash: <br /> <code>".$this->getLocalFileHash(self::FILENAME_CONVERTER)."</code>";
+    $result .= '<br />Letzte lokale &Auml;nderung: <strong>'.$this->getLastConverterUpdate().'</strong><br />';
+    $result .= 'Letzte &Auml;nderung auf php-ids.org: <strong>'.$this->getLastFileUpdate(self::FILENAME_CONVERTER).'</strong><br />';
+    $result .= 'SHA-1 Hash: <br /> <code>'.$this->getLocalFileHash(self::FILENAME_CONVERTER).'</code>';
     
     if (!$this->isConverterUpdated()) {
-      $result .= "(local)<br /> <code>".$this->getCurrentFileHash(self::FILENAME_CONVERTER)."</code>(remote)";
+      $result .= '(local)<br /> <code>'.$this->getCurrentFileHash(self::FILENAME_CONVERTER).'</code>(remote)';
     }
-    $result .= "</td></tr>";
+    $result .= '</td></tr>';
  
     // is update possible?
     if (!$this->isRulesUpdated() || !$this->isConverterUpdated()) {
-      $result .= "<tr><td class='tableCell'> </td>\n<td class='tableCell'>";
-      if ($this->isWritable() && function_exists("curl_init")) {
-        $result .= "<form method='POST'>";
-        $result .= "<input type='submit' name='update_phpids' value='Automatisch Aktualisieren' />";
-        $result .= "</form>";
+      $result .= '<tr><td class="tableCell"> </td>\n<td class="tableCell">';
+      if ($this->isWritable() && function_exists('curl_init')) {
+        $result .= '<form method="POST">';
+        $result .= '<input type="submit" name="update_phpids" value="Automatisch Aktualisieren" />';
+        $result .= '</form>';
       } else {
-        $result .= "Kein automatisches Update verf&uuml;gbar. (Dateien beschreibbar/ Curl-Extension verf&uuml;gbar?)";
+        $result .= 'Kein automatisches Update verf&uuml;gbar. (Dateien beschreibbar/ Curl-Extension verf&uuml;gbar?)';
       }
-      $result .= "</td></tr>";
+      $result .= '</td></tr>';
     }
  
-    $result .= "</table>";
+    $result .= '</table>';
  
     return $result;
   } // showVersionStatus
@@ -342,13 +342,14 @@ class phpidsAutoupdate {
    * @return mixed date of last change or if an error occured, false
    */
   private function getLastFileUpdate($filename) {
+    $result = false;
     $feed_url = sprintf(self::FEED_BASE_URL, $filename);
  
     $content = $this->fetchUrl($feed_url);
     if (preg_match("/<pubDate>([^<]+)<\/pubDate>/", $content, $match)) {
-      return date("d.m.Y H:i", strtotime($match[1]));
-    } else {
-      return false;
+      $result = date($this->_oTranslation->translate('date_time_format'), strtotime($match[1]));
     }
+    
+    return $result;
   } // getLastFileUpdate
 } // phpidsAutoupdate
