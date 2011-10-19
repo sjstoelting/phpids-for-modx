@@ -64,7 +64,9 @@ class TranslationGerman
     'title_ripe'                      => 'Information &uuml;ber die IP Adresse %s in der RIPE Datenbank',
     'title_infosniper'                => 'Information &uuml;ber die IP Adresse %s auf Infosniper.net',
     'title_test_on_phpids'            => 'Smoke Test des Angriffes auf PHPIDS',
-    'caption_download_csv'            => 'Download Intrusions als CSF Datei'
+    'caption_download_csv'            => 'Download Intrusions als CSF Datei',
+    'message_error_autoupdate'        => 'PHPIDS-Update: Ein Fehler ist aufgetreten: %s',
+    'message_error_updatedownload'    => 'PHPIDS-Update: SHA1-hash des Downloads ($s1) ist falsch! (Download nicht m&ouml;glich oder Man-in-the-Middle). SHA1 der Datei im trunk: %s2, SHA1, provided by phpids.org: %s3'
   );
 
 

@@ -274,6 +274,7 @@ class modulePHPIDS
       require_once('class.options.php');
       require_once('class.htmlbuttons.php');
       require_once('class.atomparser.php');
+      require_once ('class.phpidsAutoupdate.php');
 
       $sClassName = 'Translation' . ucfirst($language);
 
