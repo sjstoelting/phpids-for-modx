@@ -22,6 +22,18 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 +--------------------------------------------------------------------------*/
  
+/**
+ * @name PHPIDS
+ *
+ * @author Stefanie Janine Stoelting, mail@stefanie-stoelting.de
+ * @link http://code.google.com/p/phpids-for-modx/ Project home page
+ * @link http://www.stefanie-stoelting.de/phpids-news.html
+ * @link http://phpids.org/
+ * @package PHPIDS
+ * @license LGPL
+ * @since 2011/10/19
+ * @version 0.7.alpha.1
+ */
 class phpidsAutoupdate {
   const FILENAME_RULES = 'default_filter.xml';
   const FILENAME_CONVERTER = 'Converter.php';
@@ -280,40 +292,40 @@ class phpidsAutoupdate {
     $result = '<table class="tableBorder">';
     $result .= '<tr><td class="tableHead" colspan="2">IDS Version</td></tr>\n';
  
-    $result .= '<tr><td class="tableCell" valign="top">Filter:</td>\n<td class="tableCell">';
+    $result .= '<tr><td class="tableCell" valign="top">' . $this->_oTranslation->translate('caption_update_filter') . '</td>\n<td class="tableCell">';
     
     if ($this->isRulesUpdated()) {
-      $result .=  '<span style="color: green;">aktuell.</span>';
+      $result .=  '<span style="color: green;">' . $this->_oTranslation->translate('caption_update_state_ok') . '</span>';
     } else {
-      $result .=  '<span style="color: red;">nicht aktuell.</span>';
+      $result .=  '<span style="color: red;">' . $this->_oTranslation->translate('caption_update_state_not_ok') . '</span>';
       $update_needed = true;
     }
     
-    $result .= '<br />Letzte lokale &Auml;nderung: <strong>'.$this->getLastRulesUpdate().'</strong><br />';
-    $result .= 'Letzte &Auml;nderung auf php-ids.org: <strong>'.$this->getLastFileUpdate(self::FILENAME_RULES).'</strong><br />';
-    $result .= 'SHA-1 Hash: <br /> <code>'.$this->getLocalFileHash(self::FILENAME_RULES).'</code>';
+    $result .= '<br />' . sprintf($this->_oTranslation->translate('caption_last_update_local'), $this->getLastRulesUpdate()) . '<br />';
+    $result .= sprintf($this->_oTranslation->translate('caption_last_update_phpids'), $this->getLastFileUpdate(self::FILENAME_RULES)) . '<br />';
+    $result .= sprintf($this->_oTranslation->translate('caption_hash'), $this->getLocalFileHash(self::FILENAME_RULES));
     
     if (!$this->isRulesUpdated()) {
-      $result .= '(local)<br /> <code>'.$this->getCurrentFileHash(self::FILENAME_RULES).'</code>(remote)';
+      $result .= sprintf($this->_oTranslation->translate('caption_local_remote'), $this->getCurrentFileHash(self::FILENAME_RULES));
     }
     
     $result .= '</td></tr>';
          
-    $result .= '<tr><td class="tableCell" valign="top">Converter:</td>\n<td class="tableCell">';
+    $result .= '<tr><td class="tableCell" valign="top">' . $this->_oTranslation->translate('caption_converter') . '</td>\n<td class="tableCell">';
     
     if ($this->isConverterUpdated()) {
-      $result .=  '<span style="color: green;">aktuell.</span>';
+      $result .=  '<span style="color: green;">' . $this->_oTranslation->translate('caption_update_state_ok') . '</span>';
     } else {
-      $result .=  '<span style="color: red;">nicht aktuell.</span>';
+      $result .=  '<span style="color: red;">' . $this->_oTranslation->translate('caption_update_state_not_ok') . '</span>';
       $update_needed = true;
     }
     
-    $result .= '<br />Letzte lokale &Auml;nderung: <strong>'.$this->getLastConverterUpdate().'</strong><br />';
-    $result .= 'Letzte &Auml;nderung auf php-ids.org: <strong>'.$this->getLastFileUpdate(self::FILENAME_CONVERTER).'</strong><br />';
-    $result .= 'SHA-1 Hash: <br /> <code>'.$this->getLocalFileHash(self::FILENAME_CONVERTER).'</code>';
+    $result .= '<br />' . sprintf($this->_oTranslation->translate('caption_last_update_local'), $this->getLastConverterUpdate()) . '<br />';
+    $result .= sprintf($this->_oTranslation->translate('caption_last_update_phpids'), $this->getLastFileUpdate(self::FILENAME_CONVERTER)) . '<br />';
+    $result .= sprintf($this->_oTranslation->translate('caption_hash'), $this->getLocalFileHash(self::FILENAME_CONVERTER));
     
     if (!$this->isConverterUpdated()) {
-      $result .= '(local)<br /> <code>'.$this->getCurrentFileHash(self::FILENAME_CONVERTER).'</code>(remote)';
+      $result .= sprintf($this->_oTranslation->translate('caption_local_remote'), $this->getCurrentFileHash(self::FILENAME_CONVERTER));
     }
     $result .= '</td></tr>';
  
@@ -322,10 +334,10 @@ class phpidsAutoupdate {
       $result .= '<tr><td class="tableCell"> </td>\n<td class="tableCell">';
       if ($this->isWritable() && function_exists('curl_init')) {
         $result .= '<form method="POST">';
-        $result .= '<input type="submit" name="update_phpids" value="Automatisch Aktualisieren" />';
+        $result .= '<input type="submit" name="update_phpids" value="'. $this->_oTranslation->translate('caption_run_update') . '" />';
         $result .= '</form>';
       } else {
-        $result .= 'Kein automatisches Update verf&uuml;gbar. (Dateien beschreibbar/ Curl-Extension verf&uuml;gbar?)';
+        $result .= $this->_oTranslation->translate('caption_no_update_available');
       }
       $result .= '</td></tr>';
     }

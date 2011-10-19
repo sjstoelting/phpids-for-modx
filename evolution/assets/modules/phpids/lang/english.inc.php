@@ -8,8 +8,8 @@
  * @link http://phpids.org/
  * @package PHPIDS
  * @license LGPL
- * @since 2011/04/14
- * @version 0.6.5.alpha.5
+ * @since 2011/10/19
+ * @version 0.7.alpha.1
  */
 class TranslationEnglish
 {
@@ -66,7 +66,17 @@ class TranslationEnglish
     'title_test_on_phpids'            => 'Smoke test of the intrusion on PHPIDS',
     'caption_download_csv'            => 'Download intrusions as CSF file',
     'message_error_autoupdate'        => 'PHPIDS-Update: Some error occurred: %s',
-    'message_error_updatedownload'    => 'PHPIDS-Update: SHA1-hash of the downloaded file ($s1) is incorrect! (Download failed or Man-in-the-Middle). SHA1 of the file in the trunk: %s2, SHA1, provided by phpids.org: %s3'
+    'message_error_updatedownload'    => 'PHPIDS-Update: SHA1-hash of the downloaded file ($s1) is incorrect! (Download failed or Man-in-the-Middle). SHA1 of the file in the trunk: %s2, SHA1, provided by phpids.org: %s3',
+    'caption_update_filter'           => 'Filter:',
+    'caption_update_state_ok'         => 'No update available.',
+    'caption_update_state_not_ok'     => 'Update available.',
+    'caption_last_update_local'       => 'Last local change on: <strong>%s</strong>',
+    'caption_last_update_phpids'      => 'Last change on phpids.org: <strong>%s</strong>',
+    'caption_hash'                    => 'SHA-1 Hash: <br /> <code>%s</code>',
+    'caption_local_remote'            => '(local)<br /> <code>%s</code>(remote)',
+    'caption_converter'               => 'Converter:',
+    'caption_no_update_available'     => 'No automatic Update available. (files writable / Curl-Extension available?)',
+    'caption_run_update'              => 'Start Updateds'
   );
 
 
