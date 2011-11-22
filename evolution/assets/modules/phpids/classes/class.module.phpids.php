@@ -13,7 +13,7 @@
  * @link http://jquery.malsup.com/block/ The jQuery BlockUI Plugin lets you simulate synchronous behavior when using AJAX
  * @package PHPIDS
  * @license LGPL
- * @since 2011/10/19
+ * @since 2011/11/22
  * @version 0.7.alpha.1
  */
 class modulePHPIDS
@@ -222,9 +222,13 @@ class modulePHPIDS
    * @var string The enclosure for the CSV export
    */
   private $_csvEnclosure = '#';
+  
+  /*
+   * @var string The name of the current translation class
+   */
+  private $_translationClassName='';
 
-
-  /**
+    /**
    * Initalizing the class, include language file, setting default values
    *
    * @param string $language The language
@@ -276,11 +280,11 @@ class modulePHPIDS
       require_once('class.atomparser.php');
       require_once ('class.phpidsAutoupdate.php');
 
-      $sClassName = 'Translation' . ucfirst($language);
+      $this->_translationClassName = 'Translation' . ucfirst($language);
 
       $this->_language = $language;
 
-      $this->_oTranslation = new $sClassName;
+      $this->_oTranslation = new $this->_translationClassName;
 
       $this->_sBaseURL = $siteURL = $modx->config['site_url'];
 
@@ -525,7 +529,7 @@ class modulePHPIDS
                 .$htmlInclude->getInclude(HtmlInclude::CSS, 'css/ui.jqgrid.css')
                 .$htmlInclude->getInclude(HtmlInclude::CSS, 'css/jquery-ui-1.8.16.custom.css')
                 ."\n"
-                .$htmlInclude->getInclude(HtmlInclude::JAVASCRIPT, 'js/jquery-1.6.4.min.js')
+                .$htmlInclude->getInclude(HtmlInclude::JAVASCRIPT, 'js/jquery-1.7.min.js')
                 .$htmlInclude->getInclude(HtmlInclude::JAVASCRIPT, $sJSphpIDSPathFile)
                 .$htmlInclude->getInclude(HtmlInclude::JAVASCRIPT, 'js/jquery.jqGrid-4.2.0.min.js')
                 .$htmlInclude->getInclude(HtmlInclude::JAVASCRIPT, 'js/jquery-ui-1.8.16.custom.min.js')
@@ -1507,7 +1511,10 @@ class modulePHPIDS
 
       // Open the div element for filter data
       $result = "<div id=\"FilterUpdate\">\n";
-
+      
+      $autoUpdate = new phpidsAutoupdate($this->_phpidsLibPath, $this->_translationClassName);
+      
+      /*
       if ($rss->createEntryList(urlencode(self::PHPIDS_FILTER_RSS_URI))) {
 
         $feed = $rss->current();
@@ -1567,6 +1574,8 @@ class modulePHPIDS
                   .$this->_oTranslation->translate('caption_filter_uri_error')
                   ."</p>\n";
       }
+       * 
+       */
 
       $result .= "</div>\n";
     } catch (Exception $e) {

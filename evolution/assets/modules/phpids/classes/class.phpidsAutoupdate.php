@@ -31,7 +31,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  * @link http://phpids.org/
  * @package PHPIDS
  * @license LGPL
- * @since 2011/10/19
+ * @since 2011/11/22
  * @version 0.7.alpha.1
  */
 class phpidsAutoupdate {
@@ -285,8 +285,10 @@ class phpidsAutoupdate {
  
   /**
    * Show version status table
+   * 
+   * @param $targetAddress string The address, for the update button
    */
-  public function showVersionStatus() {
+  public function showVersionStatus($targetAddress) {
     $update_needed = false;
  
     $result = '<table class="tableBorder">';
@@ -333,7 +335,7 @@ class phpidsAutoupdate {
     if (!$this->isRulesUpdated() || !$this->isConverterUpdated()) {
       $result .= '<tr><td class="tableCell"> </td>\n<td class="tableCell">';
       if ($this->isWritable() && function_exists('curl_init')) {
-        $result .= '<form method="POST">';
+        $result .= '<form method="POST" action="' . $targetAddress . '>';
         $result .= '<input type="submit" name="update_phpids" value="'. $this->_oTranslation->translate('caption_run_update') . '" />';
         $result .= '</form>';
       } else {
