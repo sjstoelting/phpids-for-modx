@@ -8,7 +8,7 @@
  * @link http://phpids.org/
  * @package PHPIDS
  * @license LGPL
- * @since 2011/10/19
+ * @since 2011/11/25
  * @version 0.7.alpha.1
  */
 class TranslationGerman
@@ -75,7 +75,8 @@ class TranslationGerman
     'caption_hash'                    => 'SHA-1 Hash: <br /> <code>%s</code>',
     'caption_local_remote'            => '(local)<br /> <code>%s</code>(remote)',
     'caption_no_update_available'     => 'Kein automatisches Update verf&uuml;gbar. (Dateien beschreibbar / Curl-Extension verf&uuml;gbar?)',
-    'caption_run_update'              => 'Updates Starten'
+    'caption_run_update'              => 'Updates Starten',
+    'caption_ids_version'             => 'IDS Version'
   );
 
 

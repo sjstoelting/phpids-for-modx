@@ -31,7 +31,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  * @link http://phpids.org/
  * @package PHPIDS
  * @license LGPL
- * @since 2011/11/22
+ * @since 2011/11/25
  * @version 0.7.alpha.1
  */
 class phpidsAutoupdate {
@@ -54,7 +54,7 @@ class phpidsAutoupdate {
    * Base URL for retreiving last modification information. %s -> filename
    * @var string
    */
-  const FEED_BASE_URL = 'http://dev.itratos.de/projects/php-ids/repository/revisions/1/revisions/trunk/%s?format=atom';
+  const FEED_BASE_URL = 'https://dev.itratos.de/projects/php-ids/repository/revisions/trunk/lib/IDS?format=atom';
  
   /**
    * Path to phpids library
@@ -73,9 +73,16 @@ class phpidsAutoupdate {
    */
   private $_oTranslation = null;
 
-       
+
+  /**
+   * Contructor ot the auto update
+   * 
+   * @param string $basePath The base path to PHPIDS.
+   * @param string $sTranslation The current name of the language class.
+   */
   public function __construct ($basePath, $sTranslation) {
-    $this->phpids_base = $basePath;
+        
+    $this->phpids_base = $basePath . '/IDS/';
     $this->hash_cache = array();
     
     $this->_oTranslation = new $sTranslation;
@@ -286,15 +293,18 @@ class phpidsAutoupdate {
   /**
    * Show version status table
    * 
-   * @param $targetAddress string The address, for the update button
+   * @param $targetAddress string The address, for the update button, this could
+   *                              be a complete address or a JavaScript function
+   *                              call.
+   * @return string Returns the current update status as HTML
    */
   public function showVersionStatus($targetAddress) {
     $update_needed = false;
  
     $result = '<table class="tableBorder">';
-    $result .= '<tr><td class="tableHead" colspan="2">IDS Version</td></tr>\n';
+    $result .= '<tr><td class="tableHead" colspan="2"><h2>' . $this->_oTranslation->translate('caption_ids_version') . '</h2></td></tr>';
  
-    $result .= '<tr><td class="tableCell" valign="top">' . $this->_oTranslation->translate('caption_update_filter') . '</td>\n<td class="tableCell">';
+    $result .= '<tr><td class="tableCell" valign="top">' . $this->_oTranslation->translate('caption_update_filter') . '</td><td class="tableCell">';
     
     if ($this->isRulesUpdated()) {
       $result .=  '<span style="color: green;">' . $this->_oTranslation->translate('caption_update_state_ok') . '</span>';
@@ -313,7 +323,7 @@ class phpidsAutoupdate {
     
     $result .= '</td></tr>';
          
-    $result .= '<tr><td class="tableCell" valign="top">' . $this->_oTranslation->translate('caption_converter') . '</td>\n<td class="tableCell">';
+    $result .= '<tr><td class="tableCell" valign="top">' . $this->_oTranslation->translate('caption_converter') . '</td><td class="tableCell">';
     
     if ($this->isConverterUpdated()) {
       $result .=  '<span style="color: green;">' . $this->_oTranslation->translate('caption_update_state_ok') . '</span>';
@@ -333,9 +343,9 @@ class phpidsAutoupdate {
  
     // is update possible?
     if (!$this->isRulesUpdated() || !$this->isConverterUpdated()) {
-      $result .= '<tr><td class="tableCell"> </td>\n<td class="tableCell">';
+      $result .= '<tr><td class="tableCell"> </td><td class="tableCell">';
       if ($this->isWritable() && function_exists('curl_init')) {
-        $result .= '<form method="POST" action="' . $targetAddress . '>';
+        $result .= '<form method="POST" ' . $targetAddress . '>';
         $result .= '<input type="submit" name="update_phpids" value="'. $this->_oTranslation->translate('caption_run_update') . '" />';
         $result .= '</form>';
       } else {

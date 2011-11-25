@@ -13,7 +13,7 @@
  * @link http://jquery.malsup.com/block/ The jQuery BlockUI Plugin lets you simulate synchronous behavior when using AJAX
  * @package PHPIDS
  * @license LGPL
- * @since 2011/11/22
+ * @since 2011/11/25
  * @version 0.7.alpha.1
  */
 class modulePHPIDS
@@ -445,16 +445,16 @@ class modulePHPIDS
     try {
       $sSQL = 'SELECT COUNT(*) ColumnExists '
              .'FROM information_schema.COLUMNS '
-             .'WHERE TABLE_SCHEMA = \'' . $modx->db->config['dbase'] . '\' '
+             .'WHERE TABLE_SCHEMA = \'' . str_replace('`', '', $modx->db->config['dbase']) . '\' '
              .'AND TABLE_NAME = \'' . $sTableName . '\' '
              .'AND COLUMN_NAME = \'ip2\'';
     
       $rRecordset =  $modx->db->query($sSQL);
       if ($row = mysql_fetch_object($rRecordset)) {
-          if ($row->ColumnExists == 0) {
-              $sSQL = 'ALTER TABLE ' . $sTableName . ' ADD ip2 VARCHAR(15) NOT NULL AFTER ip';
-              $modx->db->query($sSQL);
-          }
+        if ($row->ColumnExists == 0) {
+            $sSQL = 'ALTER TABLE ' . $sTableName . ' ADD ip2 VARCHAR(15) NOT NULL AFTER ip';
+            $modx->db->query($sSQL);
+        }
       }
 
     } catch (Exception $e) {
@@ -1509,75 +1509,14 @@ class modulePHPIDS
       
       $html = new HTML();
 
-      // Open the div element for filter data
-      $result = "<div id=\"FilterUpdate\">\n";
-      
+      // Initialize the auto update class
       $autoUpdate = new phpidsAutoupdate($this->_phpidsLibPath, $this->_translationClassName);
       
-      /*
-      if ($rss->createEntryList(urlencode(self::PHPIDS_FILTER_RSS_URI))) {
+      // Open the div element, get the update state and close the div
+      $result = "<div id=\"FilterUpdate\">\n"
+              . $autoUpdate->showVersionStatus('onclick="updateFilter();"')
+              . "</div>\n";
 
-        $feed = $rss->current();
-        $timeStamp = $feed->getTimeStamp();
-
-        $options = new Options($this->_tableNames[self::TABLE_NAME_OPTIONS]);
-        $lastTimeStamp = $options->getOption(Options::OPTION_LAST_FILTER_UPDATE);
-
-        if ($timeStamp > $lastTimeStamp) {
-          $caption = sprintf(
-                  $this->_oTranslation->translate('caption_update_filter'),
-                  date(
-                          $this->_oTranslation->translate('date_time_format'),
-                          $timeStamp
-                          )
-                  );
-
-          // Set the file name
-          $fileName = $this->_phpidsLibPath . '/IDS/default_filter.xml';
-
-          // Checks, whether curl is available, if not, the update button is not available
-          if (ini_get('allow_url_fopen') && is_writable($fileName)) {
-            // Create update button
-            $button = new HTMLButtons();
-            $button->setName('UpdateFilter');
-            $button->setCaption($this->_oTranslation->translate('button_update_filter'));
-            $button->setType(HTMLButtons::TYPE_BUTTON);
-            $button->setOnClick('updateFilter();');
-            $buttonText = $button->getButton();
-          } else {
-            $buttonText = '';
-          }
-
-          // Create the Button to make updates available
-          $result .= "<form id=\"updatefilter\" name=\"upatefilter\">\n"
-                    ."<p>\n"
-                    .$caption . ' ' . $buttonText
-                    ."</p>\n"
-                    ."<p>\n"
-                    .$html->getLink(
-                            $feed->getLink(), 
-                            '', 
-                            '', 
-                            '', 
-                            true, 
-                            $this->_oTranslation->translate('caption_link_phpids_trunk'))
-                    ."</p>\n"
-                    ."</form>\n";
-        } else {        
-          // Create message, that no updates are available
-          $result .= '<p>'
-                    .$this->_oTranslation->translate('caption_no_filter_updates')
-                    ."</p>\n";
-        }
-      } else {
-        $result .= '<p>'
-                  .$this->_oTranslation->translate('caption_filter_uri_error')
-                  ."</p>\n";
-      }
-       * 
-       */
-
-      $result .= "</div>\n";
     } catch (Exception $e) {
       $this->logError($e);
     }
@@ -1589,60 +1528,16 @@ class modulePHPIDS
    * Updates the local filter with new filter from www.phpids.org and returns a
    * new text for the FilterUpdate div.
    *
-   * @return string If the update was done without errors, a new text for the
-   *                FilterUpdate div is returned
    */
   public function updateDefaultFilter()
   {
-    $result = '';
-
     try {
-      // Create the feed object
-      $rss = new RSSFeed();
-      $rss->setMaxEntries(1);
-      if ($rss->createEntryList(urlencode(self::PHPIDS_FILTER_RSS_URI))) {
+      // Initialize the auto update class
+      $autoUpdate = new phpidsAutoupdate($this->_phpidsLibPath, $this->_translationClassName);
 
-        $feed = $rss->current();
-        $timeStamp = $feed->getTimeStamp();
+      // Run the update  
+      $autoUpdate->update();
 
-        // Set the file name
-        $fileName = $this->_phpidsLibPath . '/IDS/default_filter.xml';
-
-        // Open the local file with rewriting the content
-        $handle = fopen($fileName, 'w+');
-
-        if ($handle) {
-
-          if (ini_get('allow_url_fopen')) {
-            // Open external file
-            $updateHandle = fopen(urlencode(self::PHPIDS_DEFAULT_FILTER_URI), 'r');
-
-            if ($updateHandle) {
-              // Write the new filter
-              while (($line = fgets($updateHandle)) !== false) {
-                fwrite($handle, $line);
-              }
-
-              // Write the filter date to the options
-              $options = new Options($this->_tableNames[self::TABLE_NAME_OPTIONS]);
-              $options->setOption(Options::OPTION_LAST_FILTER_UPDATE, $timeStamp);
-
-              // New text for the updatefilter div
-              $result = '<p>'
-                       .$this->_oTranslation->translate('caption_no_filter_updates')
-                       ."</p>\n";
-            }
-            // Close external file
-            fclose($updateHandle);
-          }
-          // Close local file
-          fclose($handle);
-        }
-      } else {
-        $result .= '<p>'
-                  .$this->_oTranslation->translate('caption_filter_uri_error')
-                  ."</p>\n";
-      }
     } catch (Exception $e) {
       $this->logError($e);
     }
