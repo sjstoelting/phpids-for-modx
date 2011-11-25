@@ -7,7 +7,7 @@
  * @link http://phpids.org/
  * @package PHPIDS
  * @license LGPL
- * @since 2011/10/18
+ * @since 2011/11/25
  * @version 0.7.alpha.1
  * <strong>0.7 alpha 1</strong> A module to include PHPIDS into MODx to view logs of and prevent intrusions
  *
@@ -43,7 +43,7 @@ try {
   // Manager language setting
   $sLanguage = $modx->config['manager_language'];
 
-  //Checking individual user language setting, if not set, then the default language is used
+  // Checking individual user language setting, if not set, then the default language is used
   $sSQL =  'SELECT setting_name, setting_value AS sSettingValue '
           .'FROM ' . $modx->getFullTableName('user_settings') . ' '
           .'WHERE setting_name=\'manager_language\' '
@@ -64,7 +64,7 @@ try {
     $result = $oDocumentData->getErrorContent('Module ID not set, please change the configurarion. </ br> You\'ll find the module ID if you open the module in a new tab or window, it ist the field id in the address.');
 
   } else {
-    /* Which result to return */
+    // Which result to return
     $getData = (isset ($_GET['getdata']) && is_numeric($_GET['getdata'])) ? $_GET['getdata'] : 0;
 
     // Table Name
@@ -103,7 +103,7 @@ try {
 
           break;
 
-        // get log
+        // Get log data
         case modulePHPIDS::TYPE_GET_LOG_DATA: 
           $result = $oDocumentData->getLogData($sTableIntrusions, $iModuleID);
 
@@ -115,7 +115,7 @@ try {
 
           break;
 
-        // block IP address
+        // Block IP address
         case modulePHPIDS::TYPE_BLOCK_IP: 
           $sIPAddress = isset ($_GET['ipaddress'] )? mysql_real_escape_string($_GET['ipaddress']) : '';
 
@@ -127,7 +127,7 @@ try {
 
           break;
 
-        // unblock IP address
+        // Unblock IP address
         case modulePHPIDS::TYPE_UNBLOCK_IP: 
           $sIPAddress = isset ($_GET['ipaddress']) ? mysql_real_escape_string($_GET['ipaddress']) : '';
 
@@ -139,7 +139,7 @@ try {
 
           break;
 
-        // get detail informations for blocking an IP address
+        // Get detail informations for blocking an IP address
         case modulePHPIDS::TYPE_GET_LOG_IDDETAIL: 
           $result = $oDocumentData->getLogIDDetail($sTableIntrusions);
 
