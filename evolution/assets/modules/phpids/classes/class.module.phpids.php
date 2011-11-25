@@ -448,14 +448,14 @@ class modulePHPIDS
              .'WHERE TABLE_SCHEMA = \'' . $modx->db->config['dbase'] . '\' '
              .'AND TABLE_NAME = \'' . $sTableName . '\' '
              .'AND COLUMN_NAME = \'ip2\'';
-
-    $rRecordset =  $modx->db->query($sSQL);
-    if ($row = mysql_fetch_object($rRecordset)) {
-        if ($row->ColumnExists == 1) {
-            $sSQL = 'ALTER TABLE ' . $sTableName . ' ADD ip2 VARCHAR(15) NOT NULL AFTER ip';
-            $modx->db->query($sSQL);
-        }
-    }
+    
+      $rRecordset =  $modx->db->query($sSQL);
+      if ($row = mysql_fetch_object($rRecordset)) {
+          if ($row->ColumnExists == 0) {
+              $sSQL = 'ALTER TABLE ' . $sTableName . ' ADD ip2 VARCHAR(15) NOT NULL AFTER ip';
+              $modx->db->query($sSQL);
+          }
+      }
 
     } catch (Exception $e) {
       $this->logError($e);
@@ -529,7 +529,7 @@ class modulePHPIDS
                 .$htmlInclude->getInclude(HtmlInclude::CSS, 'css/ui.jqgrid.css')
                 .$htmlInclude->getInclude(HtmlInclude::CSS, 'css/jquery-ui-1.8.16.custom.css')
                 ."\n"
-                .$htmlInclude->getInclude(HtmlInclude::JAVASCRIPT, 'js/jquery-1.7.min.js')
+                .$htmlInclude->getInclude(HtmlInclude::JAVASCRIPT, 'js/jquery-1.7.1.min.js')
                 .$htmlInclude->getInclude(HtmlInclude::JAVASCRIPT, $sJSphpIDSPathFile)
                 .$htmlInclude->getInclude(HtmlInclude::JAVASCRIPT, 'js/jquery.jqGrid-4.2.0.min.js')
                 .$htmlInclude->getInclude(HtmlInclude::JAVASCRIPT, 'js/jquery-ui-1.8.16.custom.min.js')
