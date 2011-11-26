@@ -8,7 +8,7 @@
  * @link http://phpids.org/
  * @package PHPIDS
  * @license LGPL
- * @since 2011/11/25
+ * @since 2011/11/26
  * @version 0.7.alpha.1
  */
 class TranslationEnglish
@@ -77,7 +77,11 @@ class TranslationEnglish
     'caption_converter'               => 'Converter:',
     'caption_no_update_available'     => 'No automatic Update available. (files writable / Curl-Extension available?)',
     'caption_run_update'              => 'Start Updateds',
-    'caption_ids_version'             => 'IDS Version'
+    'caption_ids_version'             => 'IDS Version',
+    'caption_ids_version'             => 'IDS Version',
+    'caption_download'                => 'Downloads',
+    'caption_database'                => 'Database',
+    'caption_version'                 => 'Current plugin version'
   );
 
 

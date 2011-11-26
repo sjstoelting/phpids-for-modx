@@ -8,7 +8,7 @@
  * @link http://phpids.org/
  * @package PHPIDS
  * @license LGPL
- * @since 2011/11/25
+ * @since 2011/11/26
  * @version 0.7.alpha.1
  */
 class TranslationGerman
@@ -76,7 +76,10 @@ class TranslationGerman
     'caption_local_remote'            => '(local)<br /> <code>%s</code>(remote)',
     'caption_no_update_available'     => 'Kein automatisches Update verf&uuml;gbar. (Dateien beschreibbar / Curl-Extension verf&uuml;gbar?)',
     'caption_run_update'              => 'Updates Starten',
-    'caption_ids_version'             => 'IDS Version'
+    'caption_ids_version'             => 'IDS Version',
+    'caption_download'                => 'Downloads',
+    'caption_database'                => 'Datenbank',
+    'caption_version'                 => 'Atkuelle plugin Version'
   );
 
 

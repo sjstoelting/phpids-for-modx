@@ -158,6 +158,11 @@ class modulePHPIDS
    * Constant integer with the default with for modal windows
    */
   const DEFAULT_WINDOWS_WIDTH = 450;
+  
+  /**
+   * Constant string with the current version of the MODX PHPIDS implementation
+   */
+  const PLUGIN_VERSION = '0.7.alpha.1';
 
   /**
    * @var Object Object contains the language object with translations
@@ -508,7 +513,8 @@ class modulePHPIDS
       // The extended tab
       $tab3Content = $this->getFilterButton()
                     .$this->getDownloadLink($iModuleID)
-                    .$this->getTruncateTable();
+                    .$this->getTruncateTable()
+                    .$this->getCurrentVersion();
       
       $uiTabs->setTab(3,
              $this->_oTranslation->translate('caption_tab_extended'),
@@ -1514,8 +1520,8 @@ class modulePHPIDS
       
       // Open the div element, get the update state and close the div
       $result = "<div id=\"FilterUpdate\">\n"
-              . $autoUpdate->showVersionStatus('onclick="updateFilter();"')
-              . "</div>\n";
+               .$autoUpdate->showVersionStatus('onclick="updateFilter();"')
+               ."</div>\n";
 
     } catch (Exception $e) {
       $this->logError($e);
@@ -1563,6 +1569,7 @@ class modulePHPIDS
       $buttonText = $button->getButton();
 
       $result = "<div id=\"TruncateTable\">\n"
+               .'<h2>' . $this->_oTranslation->translate('caption_database') . "</h2>\n"
                ."<p>\n"
                .$this->_oTranslation->translate('message_truncate_log') . ' ' . $buttonText
                ."</p>\n"
@@ -1573,6 +1580,28 @@ class modulePHPIDS
 
     return $result;
   } // getTruncateTable
+  
+  /**
+   * Returns the current version of the MODX PHPIDS plugin.
+   * 
+   * @return string The current version text
+   */
+  private function getCurrentVersion()
+  {
+    $result = '';
+
+    try {
+
+      $result = "<div id=\"CurrentVersion\">\n"
+               .'<h2>' . $this->_oTranslation->translate('caption_version') . "</h2>\n"
+               .'<p>' . self::PLUGIN_VERSION . "</p>\n"
+               ."</div>\n";
+    } catch (Exception $e) {
+      $this->logError($e);
+    }
+
+    return $result;
+  } // getCurrentVersion
 
   /**
    * Returns the download div for downloading the intrusion table as CSV file.
@@ -1597,6 +1626,7 @@ class modulePHPIDS
 
       // Build the download div element
       $result = "<div id=\"DownloadCSV\">\n"
+              .'<h2>' . $this->_oTranslation->translate('caption_download') . "</h2>\n"
               ."<p>\n"
               .$link
               ."</p>\n"
