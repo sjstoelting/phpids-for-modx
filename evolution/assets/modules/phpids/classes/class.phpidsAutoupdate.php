@@ -31,8 +31,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  * @link http://phpids.org/
  * @package PHPIDS
  * @license LGPL
- * @since 2011/11/25
- * @version 0.7.alpha.1
+ * @since 2011/11/26
+ * @version 0.7
  */
 class phpidsAutoupdate {
   const FILENAME_RULES = 'default_filter.xml';

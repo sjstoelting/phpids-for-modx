@@ -7,8 +7,8 @@
  * @link http://www.stefanie-stoelting.de/
  * @package PHPIDS
  * @license LGPL
- * @since 2011/02/05
- * @version 0.6.5.alpha2
+ * @since 2011/11/26
+ * @version 0.7
  */
 class HTMLButtons
 {

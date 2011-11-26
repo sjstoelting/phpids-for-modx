@@ -9,7 +9,7 @@
  * @package PHPIDS
  * @license LGPL
  * @since 2011/11/26
- * @version 0.7.alpha.1
+ * @version 0.7
  */
 class TranslationEnglish
 {
