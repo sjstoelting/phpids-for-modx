@@ -8,8 +8,8 @@
  * @link http://phpids.org/
  * @package PHPIDS
  * @license LGPL
- * @since 2011/11/26
- * @version 0.7
+ * @since 2012/01/07
+ * @version 0.7.1
  */
 class TranslationEnglish
 {
@@ -76,7 +76,7 @@ class TranslationEnglish
     'caption_local_remote'            => '(local)<br /> <code>%s</code>(remote)',
     'caption_converter'               => 'Converter:',
     'caption_no_update_available'     => 'No automatic Update available. (files writable / Curl-Extension available?)',
-    'caption_run_update'              => 'Start Updateds',
+    'caption_run_update'              => 'Start Update',
     'caption_ids_version'             => 'IDS Version',
     'caption_ids_version'             => 'IDS Version',
     'caption_download'                => 'Downloads',
