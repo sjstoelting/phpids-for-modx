@@ -1,0 +1,45 @@
+My own code is licensed under LGPL (http://www.gnu.org/licenses/lgpl.html)
+
+This project is hosted at
+http://code.google.com/p/phpids-for-modx/
+
+The module and the plugin are developed for MODx (http://WWW.modxcms.com)
+
+This package contains the following free packages:
+
+jQuery (http:www.jquery.com)
+jqGrid (http://www.trirand.net/)
+PHPIDS (http://php-ids.org/)
+
+Without their work, my work would not been possible.
+
+
+
+Installation:
+
+Upload the folders lib and modules in the assets directory of your existing MODx installation with a FTP client program.
+
+Open the file assets/plugins/phpids/plugin.phpids.inc.php.tpl and copy the content.
+Go to your MODx backend, click on the tab "Modules" -> "Manage Modules" -> New Module".
+Name the module PHPIDS and paste the copied code into "Module code (php)".
+Now click on "Configuration", there you hav to enable parameter sharing and paste the following line into "Module configuration" and click "Update parameter display".
+
+&useMODxBasePath=Use MODx base path?;list;true,false;true &basePath=PHPIDS path?;string;assets/lib/phpids/lib &useLogFile=Use log file?;list;true,false;false &useEmail=Use email?;list;true,false;true &useDatabase=Use database?;list;true,false;true &useMODxTablePrefix=Use MODx table prefix?;list;true,false;true &useMODxLog=Use MODx Log?;list;true,false;true &logFromImpact=Start logging from impact?;int;5 &sendMailFromImpact=Start sending mails from impact, high (around 15) or very high (around 25-50) impact?;int;15 &idsRecipients=Mail resipients (separated by comma);text; &idsSubject=Mail subject <br />(keep empty to use default);text; &SMTPServer=SMPT server;text; &SMTPPort=SMPT port <br />(default is 25, leave empty to use default);text; &SMTPAccount=SMPT account;text; &SMTPPassword=SMPT password;text; &mailFrom=E-Mail From Name<br> Only used with SMTP;text;PHPIDS;&useExeptions=Exceptions separated with pipes (|);text;&blockedDocumentID=ID of the MODx document, that blocked IPs would see, default is root;text&defaultTableEntries=Default table entries on start;text;20 &redirectIntrusionLevel=Redirect intrusions from a level (50 is hight);text;50 &redirectIntrusionID=Redircet intrusion to the document ID (0 means no redirection);text;0
+
+Now you can change the configuration of the plugin and the module. All parameters, that are not personally as the e-mail address, where the impacts should be reported, are filled with default values.
+
+Click on "Save" and the first module step is done.
+
+Open the file assets/plugins/phpids/plugin.phpids.inc.php.tpl and copy the content.
+In your MODx backend click on "Elements" -> "Manage Elements" -> "Plugins" -> "New Plugin".
+Name the plugin PHPIDS and paste the copied content into "Plugin code (php)". Then go to "System Events" and under "Template Service Events" choose "OnWebPageInit", then click on save.
+
+Go back the module by "Modules" -> "Manage Modules" -> "PHPIDS" and then on the tab "Dependencies". No click "Manage Dependencies" and there on "Add Plugin".
+Here you only have to click on "Insert" and then on "Close".
+
+No go back to "Elements" -> "Manage Elements" -> "Plugins" and edit "PHPIDS". Open tab "Configuration" and choose "PHPIDS" in the drop down box "Import Module shared parameters".
+
+You've done it, the installation is finished.
+
+If you want to update the filter from the tab "Extended Options", you have to give write access to the /assets/lib/phpids/lib/IDS and here to the file default_filter.xml.
+When the write permission is detected, a button to update the filter is available. Otherwise you should download the new filter, if a newer filter is available, and use your FTP client to upload the file.
