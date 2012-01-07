@@ -81,7 +81,8 @@ class TranslationEnglish
     'caption_ids_version'             => 'IDS Version',
     'caption_download'                => 'Downloads',
     'caption_database'                => 'Database',
-    'caption_version'                 => 'Current plugin version'
+    'caption_version'                 => 'Current plugin version',
+    'caption_loading_filter_update'   => 'Filter update in progress'
   );
 
 

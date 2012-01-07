@@ -8,8 +8,8 @@
  * @link http://phpids.org/
  * @package PHPIDS
  * @license LGPL
- * @since 2011/11/26
- * @version 0.7
+ * @since 2012/01/07
+ * @version 0.7.1
  */
 class TranslationGerman
 {
@@ -79,7 +79,8 @@ class TranslationGerman
     'caption_ids_version'             => 'IDS Version',
     'caption_download'                => 'Downloads',
     'caption_database'                => 'Datenbank',
-    'caption_version'                 => 'Atkuelle plugin Version'
+    'caption_version'                 => 'Atkuelle plugin Version',
+    'caption_loading_filter_update'   => 'Filter Update wird verarbeitet'
   );
 
 

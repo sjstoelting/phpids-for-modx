@@ -13,8 +13,8 @@
  * @link http://jquery.malsup.com/block/ The jQuery BlockUI Plugin lets you simulate synchronous behavior when using AJAX
  * @package PHPIDS
  * @license LGPL
- * @since 2011/11/26
- * @version 0.7
+ * @since 2012/01/07
+ * @version 0.7.1
  */
 class modulePHPIDS
 {
@@ -990,7 +990,7 @@ class modulePHPIDS
                     ."\n"
                     ."    function updateFilter() {\n"
                     ."      \$.blockUI({message: '<h3>"
-                    .     $this->_oTranslation->translate('caption_truncate_log_progress')
+                    .     $this->_oTranslation->translate('caption_loading_filter_update')
                     .     " <img src=\"" . $this->_sBaseURL . $this->_phpIDSPath . "css/images/ui-anim_basic_16x16.gif\" /></h3>'});\n"
                     ."      \$.get('" . $this->_sBaseURL
                     .         "manager/index.php', {'a':112, 'id':$iModuleID, 'getdata':"
