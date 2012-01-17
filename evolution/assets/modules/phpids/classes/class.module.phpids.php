@@ -13,8 +13,8 @@
  * @link http://jquery.malsup.com/block/ The jQuery BlockUI Plugin lets you simulate synchronous behavior when using AJAX
  * @package PHPIDS
  * @license LGPL
- * @since 2012/01/07
- * @version 0.7.1
+ * @since 2012/01/17
+ * @version 0.7.1.1
  */
 class modulePHPIDS
 {
@@ -162,7 +162,7 @@ class modulePHPIDS
   /**
    * Constant string with the current version of the MODX PHPIDS implementation
    */
-  const PLUGIN_VERSION = '0.7.1';
+  const PLUGIN_VERSION = '0.7.1.1';
 
   /**
    * @var Object Object contains the language object with translations
@@ -282,7 +282,6 @@ class modulePHPIDS
       require_once('class.rssfeed.php');
       require_once('class.options.php');
       require_once('class.htmlbuttons.php');
-      require_once('class.atomparser.php');
       require_once ('class.phpidsAutoupdate.php');
 
       $this->_translationClassName = 'Translation' . ucfirst($language);
