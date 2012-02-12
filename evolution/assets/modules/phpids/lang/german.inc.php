@@ -8,8 +8,8 @@
  * @link http://phpids.org/
  * @package PHPIDS
  * @license LGPL
- * @since 2012/01/07
- * @version 0.7.1
+ * @since 2012/02/12
+ * @version 0.7.1.2
  */
 class TranslationGerman
 {
@@ -80,7 +80,9 @@ class TranslationGerman
     'caption_download'                => 'Downloads',
     'caption_database'                => 'Datenbank',
     'caption_version'                 => 'Atkuelle plugin Version',
-    'caption_loading_filter_update'   => 'Filter Update wird verarbeitet'
+    'caption_loading_filter_update'   => 'Filter Update wird verarbeitet',
+    'caption_filter_update_done'      => 'Das Filter Update erfolgreich beendet.',
+    'caption_filter_update_error'     => 'Das Filter update wurde mit einem Fehler beendet, bitte &uuml;berpr&uuml;fen Sie das System Log.'
   );
 
 

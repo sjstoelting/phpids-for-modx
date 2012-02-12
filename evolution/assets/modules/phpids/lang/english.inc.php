@@ -8,8 +8,8 @@
  * @link http://phpids.org/
  * @package PHPIDS
  * @license LGPL
- * @since 2012/01/07
- * @version 0.7.1
+ * @since 2012/02/12
+ * @version 0.7.1.2
  */
 class TranslationEnglish
 {
@@ -78,11 +78,12 @@ class TranslationEnglish
     'caption_no_update_available'     => 'No automatic Update available. (files writable / Curl-Extension available?)',
     'caption_run_update'              => 'Start Update',
     'caption_ids_version'             => 'IDS Version',
-    'caption_ids_version'             => 'IDS Version',
     'caption_download'                => 'Downloads',
     'caption_database'                => 'Database',
     'caption_version'                 => 'Current plugin version',
-    'caption_loading_filter_update'   => 'Filter update in progress'
+    'caption_loading_filter_update'   => 'Filter update in progress',
+    'caption_filter_update_done'      => 'Filter update successfully finished.',
+    'caption_filter_update_error'     => 'The Filter update ended with an error, pleas check the system event log.'
   );
 
 

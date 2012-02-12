@@ -7,9 +7,9 @@
  * @link http://phpids.org/
  * @package PHPIDS
  * @license LGPL
- * @since 2012/01/07
- * @version 0.7.1
- * <strong>0.7.1</strong> A plugin to include PHPIDS into MODx to log and prevent intrusions
+ * @since 2012/02/12
+ * @version 0.7.1.2
+ * <strong>0.7.1.2</strong> A plugin to include PHPIDS into MODx to log and prevent intrusions
  *
  *
  * Module Configuration
@@ -166,6 +166,8 @@ try {
         // Update filter from phpids.org
         case modulePHPIDS::TYPE_UPDATE_FILTER:
           $result = $oDocumentData->updateDefaultFilter();
+
+          break;
 
         // Create a CSV file from the intrusions table
         case modulePHPIDS::TYPE_GET_CSV:

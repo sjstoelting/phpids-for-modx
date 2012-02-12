@@ -13,8 +13,8 @@
  * @link http://jquery.malsup.com/block/ The jQuery BlockUI Plugin lets you simulate synchronous behavior when using AJAX
  * @package PHPIDS
  * @license LGPL
- * @since 2012/01/17
- * @version 0.7.1.1
+ * @since 2012/02/12
+ * @version 0.7.1.2
  */
 class modulePHPIDS
 {
@@ -162,7 +162,7 @@ class modulePHPIDS
   /**
    * Constant string with the current version of the MODX PHPIDS implementation
    */
-  const PLUGIN_VERSION = '0.7.1.1';
+  const PLUGIN_VERSION = '0.7.1.2';
 
   /**
    * @var Object Object contains the language object with translations
@@ -1541,13 +1541,24 @@ class modulePHPIDS
       $autoUpdate = new phpidsAutoupdate($this->_phpidsLibPath, $this->_translationClassName);
 
       // Run the update  
-      $autoUpdate->update();
-
-    } catch (Exception $e) {
-      $this->logError($e);
-    }
+      if ($autoUpdate->update()) {
+        $result = '<table class="tableBorder">'
+                . '<tr><td class="tableHead" colspan="2"><h2>' . $this->_oTranslation->translate('caption_ids_version') . '</h2></td></tr>'
+                . '<tr><td class="tableCell" valign="top">' . $this->_oTranslation->translate('caption_filter_update_done') . '</td></tr>'
+                . '</table>';
+      }
 
     return $result;
+    
+    } catch (Exception $e) {
+      $this->logError($e);
+      $result = '<table class="tableBorder">'
+              . '<tr><td class="tableHead" colspan="2"><h2>' . $this->_oTranslation->translate('caption_ids_version') . '</h2></td></tr>'
+              . '<tr><td class="tableCell" valign="top">' . $this->_oTranslation->translate('caption_filter_update_error') . '</td></tr>'
+              . '</table>';
+      
+      return $result;
+    }
   } // updateDefaultFilter
 
   /**
@@ -1714,7 +1725,7 @@ class modulePHPIDS
    *
    * @param string $sTableName
    */
-  public function exportImntrusionsAsCSV($sTableName)
+  public function exportIntrusionsAsCSV($sTableName)
   {
     global $modx;
 
