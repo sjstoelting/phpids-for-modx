@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class phpidsAutoupdate</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class phpidsAutoupdate</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">author:</span> Stefanie Janine Stoelting, mail@stefanie-stoelting.de</li>
+				<li><span class="field">version:</span> 0.7.1.2</li>
+				<li><span class="field">link:</span> <a href="http://phpids.org/">http://phpids.org/</a></li>
+				<li><span class="field">link:</span> <a href="http://www.stefanie-stoelting.de/phpids-news.html">http://www.stefanie-stoelting.de/phpids-news.html</a></li>
+				<li><span class="field">link:</span> <a href="http://code.google.com/p/phpids-for-modx/">Project home page</a></li>
+				<li><span class="field">since:</span> 2012/02/12</li>
+				<li><span class="field">name:</span> PHPIDS</li>
+				<li><span class="field">license:</span> LGPL</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_evolution---assets---modules---phpids---classes---class.phpidsAutoupdate.php.html">/evolution/assets/modules/phpids/classes/class.phpidsAutoupdate.php</a> (line <span class="field">37</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#DOWNLOAD_BASE_URL" title="details" class="const-name">DOWNLOAD_BASE_URL</a> = 					<span class="var-type"> 'https://dev.itratos.de/projects/php-ids/repository/raw/trunk/lib/IDS/'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FEED_BASE_URL" title="details" class="const-name">FEED_BASE_URL</a> = 					<span class="var-type"> 'https://dev.itratos.de/projects/php-ids/repository/revisions/trunk/lib/IDS?format=atom'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FILENAME_CONVERTER" title="details" class="const-name">FILENAME_CONVERTER</a> = 					<span class="var-type"> 'Converter.php'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FILENAME_RULES" title="details" class="const-name">FILENAME_RULES</a> = 					<span class="var-type"> 'default_filter.xml'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#HASH_BASE_URL" title="details" class="const-name">HASH_BASE_URL</a> = 					<span class="var-type"> 'https://phpids.org/hash.php?f='</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+									<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																				
+												<div class="method-definition">
+											<span class="method-result">phpidsAutoupdate</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$basePath</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$sTranslation</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#isConverterUpdated" title="details" class="method-name">isConverterUpdated</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#isRulesUpdated" title="details" class="method-name">isRulesUpdated</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#isWritable" title="details" class="method-name">isWritable</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#showVersionStatus" title="details" class="method-name">showVersionStatus</a>
+											(<span class="var-type">$targetAddress</span>&nbsp;<span class="var-name">$targetAddress</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#update" title="details" class="method-name">update</a>
+										()
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">83</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Contructor ot the auto update</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">phpidsAutoupdate</span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$basePath</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$sTranslation</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$basePath</span><span class="var-description">: The base path to PHPIDS.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sTranslation</span><span class="var-description">: The current name of the language class.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodisConverterUpdated" id="isConverterUpdated"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">isConverterUpdated</span> (line <span class="line-number">248</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Compare local and remote version of ids converter.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns true if rules are uptodate.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			isConverterUpdated
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodisRulesUpdated" id="isRulesUpdated"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">isRulesUpdated</span> (line <span class="line-number">232</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Compare local and remote version of ids rules.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns true if rules are uptodate.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			isRulesUpdated
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodisWritable" id="isWritable"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">isWritable</span> (line <span class="line-number">264</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Check for existing rules and converter and for write permissions</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns true if both files are writable</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			isWritable
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodshowVersionStatus" id="showVersionStatus"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">showVersionStatus</span> (line <span class="line-number">301</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Show version status table</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns the current update status as HTML</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			showVersionStatus
+		</span>
+					(<span class="var-type">$targetAddress</span>&nbsp;<span class="var-name">$targetAddress</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">$targetAddress</span>
+				<span class="var-name">$targetAddress</span><span class="var-description">: string The address, for the update button, this could                               be a complete address or a JavaScript function                               call.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodupdate" id="update"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">update</span> (line <span class="line-number">129</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Perform a Rule and Converter update if necessary</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> returns false if an error occured</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			update
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constDOWNLOAD_BASE_URL" id="DOWNLOAD_BASE_URL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DOWNLOAD_BASE_URL</span>
+			 = <span class="const-default"> 'https://dev.itratos.de/projects/php-ids/repository/raw/trunk/lib/IDS/'</span>
+			(line <span class="line-number">51</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The base url of the rules and converter file</p>
+	
+	
+</div>
+<a name="constFEED_BASE_URL" id="FEED_BASE_URL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FEED_BASE_URL</span>
+			 = <span class="const-default"> 'https://dev.itratos.de/projects/php-ids/repository/revisions/trunk/lib/IDS?format=atom'</span>
+			(line <span class="line-number">57</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Base URL for retreiving last modification information. %s -&gt; filename</p>
+	
+	
+</div>
+<a name="constFILENAME_CONVERTER" id="FILENAME_CONVERTER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FILENAME_CONVERTER</span>
+			 = <span class="const-default"> 'Converter.php'</span>
+			(line <span class="line-number">39</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFILENAME_RULES" id="FILENAME_RULES"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FILENAME_RULES</span>
+			 = <span class="const-default"> 'default_filter.xml'</span>
+			(line <span class="line-number">38</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constHASH_BASE_URL" id="HASH_BASE_URL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HASH_BASE_URL</span>
+			 = <span class="const-default"> 'https://phpids.org/hash.php?f='</span>
+			(line <span class="line-number">45</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Url returns SHA-1 Hash of the current version</p>
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Sun, 12 Feb 2012 23:16:32 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

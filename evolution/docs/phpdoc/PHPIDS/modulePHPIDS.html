@@ -1,0 +1,1596 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class modulePHPIDS</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class modulePHPIDS</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Handles all data requests from the module</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Stefanie Janine Stoelting, mail@stefanie-stoelting.de</li>
+				<li><span class="field">version:</span> 0.7.1.2</li>
+				<li><span class="field">link:</span> <a href="http://jquery.malsup.com/block/">The jQuery BlockUI Plugin lets you simulate synchronous behavior when using AJAX</a></li>
+				<li><span class="field">link:</span> <a href="http://www.trirand.net/">jqGrid is a jQuery based table class</a></li>
+				<li><span class="field">link:</span> <a href="http://jquery.com">jQuery JavaScript libary</a></li>
+				<li><span class="field">link:</span> <a href="http://code.google.com/p/phpids-for-modx/">Project home page</a></li>
+				<li><span class="field">link:</span> <a href="http://www.stefanie-stoelting.de/phpids-news.html">http://www.stefanie-stoelting.de/phpids-news.html</a></li>
+				<li><span class="field">link:</span> <a href="http://phpids.org/">http://phpids.org/</a></li>
+				<li><span class="field">since:</span> 2012/02/12</li>
+				<li><span class="field">name:</span> PHPIDS</li>
+				<li><span class="field">license:</span> LGPL</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_evolution---assets---modules---phpids---classes---class.module.phpids.php.html">/evolution/assets/modules/phpids/classes/class.module.phpids.php</a> (line <span class="field">19</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#DEFAULT_FONT_SIZE" title="details" class="const-name">DEFAULT_FONT_SIZE</a> = 					<span class="var-type"> 0.8</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#DEFAULT_FONT_SIZE_DIALOG" title="details" class="const-name">DEFAULT_FONT_SIZE_DIALOG</a> = 					<span class="var-type"> 0.6</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#DEFAULT_LANGUAGE" title="details" class="const-name">DEFAULT_LANGUAGE</a> = 					<span class="var-type"> 'english'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#DEFAULT_ROW_COUNT" title="details" class="const-name">DEFAULT_ROW_COUNT</a> = 					<span class="var-type"> 20</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#DEFAULT_WINDOWS_WIDTH" title="details" class="const-name">DEFAULT_WINDOWS_WIDTH</a> = 					<span class="var-type"> 450</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FIELD_SEPARATOR" title="details" class="const-name">FIELD_SEPARATOR</a> = 					<span class="var-type"> '|'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#INFOSNIPER" title="details" class="const-name">INFOSNIPER</a> = 					<span class="var-type"> 'http://www.infosniper.net/index.php?ip_address=%s'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#NEWS_RSS_URI" title="details" class="const-name">NEWS_RSS_URI</a> = 					<span class="var-type"> 'http://www.stefanie-stoelting.de/phpids-news-rss-feed.html'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PAGER_ID" title="details" class="const-name">PAGER_ID</a> = 					<span class="var-type"> 'div_pager'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PHPIDS_DEFAULT_FILTER_URI" title="details" class="const-name">PHPIDS_DEFAULT_FILTER_URI</a> = 					<span class="var-type"> 'https://dev.itratos.de/projects/php-ids/repository/raw/trunk/lib/IDS/default_filter.xml'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PHPIDS_FILTER_RSS_URI" title="details" class="const-name">PHPIDS_FILTER_RSS_URI</a> = 					<span class="var-type"> 'https://trac.phpids.org/index.fcgi/log/trunk/lib/IDS/default_filter.xml?limit=1&amp;format=rss'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PHPIDS_TEST_URI" title="details" class="const-name">PHPIDS_TEST_URI</a> = 					<span class="var-type"> 'http://demo.phpids.org/?test=%s'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PLUGIN_VERSION" title="details" class="const-name">PLUGIN_VERSION</a> = 					<span class="var-type"> '0.7.1.2'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#RIPE" title="details" class="const-name">RIPE</a> = 					<span class="var-type"> 'http://www.db.ripe.net/whois?form_type=simple&amp;full_query_string=&amp;searchtext=%s&amp;do_search=Search'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TABLE_ID" title="details" class="const-name">TABLE_ID</a> = 					<span class="var-type"> 'table_logdata'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TABLE_NAME_BLOCK" title="details" class="const-name">TABLE_NAME_BLOCK</a> = 					<span class="var-type"> 'phpids_block'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TABLE_NAME_INTRUSIONS" title="details" class="const-name">TABLE_NAME_INTRUSIONS</a> = 					<span class="var-type"> 'phpids_intrusions'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TABLE_NAME_OPTIONS" title="details" class="const-name">TABLE_NAME_OPTIONS</a> = 					<span class="var-type"> 'phpids_options'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TYPE_BLOCK_IP" title="details" class="const-name">TYPE_BLOCK_IP</a> = 					<span class="var-type"> 3</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TYPE_DELETE_LOG_RECORD" title="details" class="const-name">TYPE_DELETE_LOG_RECORD</a> = 					<span class="var-type"> 9</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TYPE_GET_BLOCKED_DATA" title="details" class="const-name">TYPE_GET_BLOCKED_DATA</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TYPE_GET_BLOCK_IDDETAIL" title="details" class="const-name">TYPE_GET_BLOCK_IDDETAIL</a> = 					<span class="var-type"> 7</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TYPE_GET_CSV" title="details" class="const-name">TYPE_GET_CSV</a> = 					<span class="var-type"> 11</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TYPE_GET_LOG_CONTENT" title="details" class="const-name">TYPE_GET_LOG_CONTENT</a> = 					<span class="var-type"> 0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TYPE_GET_LOG_DATA" title="details" class="const-name">TYPE_GET_LOG_DATA</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TYPE_GET_LOG_IDDETAIL" title="details" class="const-name">TYPE_GET_LOG_IDDETAIL</a> = 					<span class="var-type"> 6</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TYPE_TRUNCATE_LOG" title="details" class="const-name">TYPE_TRUNCATE_LOG</a> = 					<span class="var-type"> 8</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TYPE_UNBLOCK_IP" title="details" class="const-name">TYPE_UNBLOCK_IP</a> = 					<span class="var-type"> 4</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TYPE_UPDATE_FILTER" title="details" class="const-name">TYPE_UPDATE_FILTER</a> = 					<span class="var-type"> 10</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+									<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																				
+												<div class="method-definition">
+											<span class="method-result">modulePHPIDS</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$language</span> = <span class="var-default">self::DEFAULT_LANGUAGE</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$fontSize</span> = <span class="var-default">self::DEFAULT_FONT_SIZE</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$DEFAULT_ROW_COUNT</span> = <span class="var-default">self::DEFAULT_ROW_COUNT</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$fontSizeDialog</span> = <span class="var-default">self::DEFAULT_FONT_SIZE_DIALOG</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$tableNames</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#blockIP" title="details" class="method-name">blockIP</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sIPAddress</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#createBlockTable" title="details" class="method-name">createBlockTable</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#createLogTable" title="details" class="method-name">createLogTable</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#deleteLogRecord" title="details" class="method-name">deleteLogRecord</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#emptyLogTable" title="details" class="method-name">emptyLogTable</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#exportIntrusionsAsCSV" title="details" class="method-name">exportIntrusionsAsCSV</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getBlockedData" title="details" class="method-name">getBlockedData</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$iModuleID</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getBlockIDDetail" title="details" class="method-name">getBlockIDDetail</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getErrorContent" title="details" class="method-name">getErrorContent</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sErrorText</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getLanguageShortcut" title="details" class="method-name">getLanguageShortcut</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$language</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getLogContent" title="details" class="method-name">getLogContent</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$iModuleID</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getLogData" title="details" class="method-name">getLogData</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$iModuleID</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getLogIDDetail" title="details" class="method-name">getLogIDDetail</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getPhpidsLibPath" title="details" class="method-name">getPhpidsLibPath</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#logError" title="details" class="method-name">logError</a>
+											(<span class="var-type">object</span>&nbsp;<span class="var-name">$oError</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setCsvDelimiter" title="details" class="method-name">setCsvDelimiter</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setCsvEnclosure" title="details" class="method-name">setCsvEnclosure</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setPhpidsLibPath" title="details" class="method-name">setPhpidsLibPath</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setTableName" title="details" class="method-name">setTableName</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setTableNames" title="details" class="method-name">setTableNames</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$tableNames</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#unBlockIP" title="details" class="method-name">unBlockIP</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sIPAddress</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#updateDefaultFilter" title="details" class="method-name">updateDefaultFilter</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#updateLogTable" title="details" class="method-name">updateLogTable</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">245</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Initalizing the class, include language file, setting default values</p>
+	
+	<div class="method-signature">
+		<span class="method-result">modulePHPIDS</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$language</span> = <span class="var-default">self::DEFAULT_LANGUAGE</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$fontSize</span> = <span class="var-default">self::DEFAULT_FONT_SIZE</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$DEFAULT_ROW_COUNT</span> = <span class="var-default">self::DEFAULT_ROW_COUNT</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$fontSizeDialog</span> = <span class="var-default">self::DEFAULT_FONT_SIZE_DIALOG</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$tableNames</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$language</span><span class="var-description">: The language</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$fontSize</span><span class="var-description">: The font size has to be a string numeric value</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$DEFAULT_ROW_COUNT</span><span class="var-description">: The default row count of tables</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$fontSizeDialog</span><span class="var-description">: The default font size for dialogs</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$tableNames</span><span class="var-description">: The names of the tables</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodblockIP" id="blockIP"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">blockIP</span> (line <span class="line-number">1306</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Writes an IP-address to the database, that will be blocked by the plugin</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			blockIP
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sIPAddress</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sIPAddress</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sTableName</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcreateBlockTable" id="createBlockTable"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">createBlockTable</span> (line <span class="line-number">388</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates the table for blocking IP-addresses, if it does not exist</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			createBlockTable
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sTableName</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcreateLogTable" id="createLogTable"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">createLogTable</span> (line <span class="line-number">414</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates the table for logging intrusions, if it does not exist</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			createLogTable
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sTableName</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddeleteLogRecord" id="deleteLogRecord"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">deleteLogRecord</span> (line <span class="line-number">1479</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Delete a record of the log table</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> whether the delete was done or an error occured</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			deleteLogRecord
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sTableName</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodemptyLogTable" id="emptyLogTable"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">emptyLogTable</span> (line <span class="line-number">1452</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Truncate the log table</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> A text to inform, that the table is empty now</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			emptyLogTable
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sTableName</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodexportIntrusionsAsCSV" id="exportIntrusionsAsCSV"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">exportIntrusionsAsCSV</span> (line <span class="line-number">1728</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the current intrusions as CSV file.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			exportIntrusionsAsCSV
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sTableName</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetBlockedData" id="getBlockedData"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getBlockedData</span> (line <span class="line-number">1239</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the data of blocked IP-addresses from the database</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getBlockedData
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$iModuleID</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sTableName</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$iModuleID</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetBlockIDDetail" id="getBlockIDDetail"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getBlockIDDetail</span> (line <span class="line-number">1418</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the details of a log record</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getBlockIDDetail
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sTableName</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetErrorContent" id="getErrorContent"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getErrorContent</span> (line <span class="line-number">760</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a HTML page with the given error message</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getErrorContent
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sErrorText</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sErrorText</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetLanguageShortcut" id="getLanguageShortcut"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLanguageShortcut</span> (line <span class="line-number">738</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the language shortcut for the given language. If the language is  not found, the shortcut of default language is taken</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getLanguageShortcut
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$language</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$language</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetLogContent" id="getLogContent"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLogContent</span> (line <span class="line-number">949</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the document with the log data table</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getLogContent
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$iModuleID</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$iModuleID</span><span class="var-description">: The module ID of MODx for PHPIDS</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetLogData" id="getLogData"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLogData</span> (line <span class="line-number">1149</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the log data from the database</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getLogData
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$iModuleID</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sTableName</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$iModuleID</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetLogIDDetail" id="getLogIDDetail"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLogIDDetail</span> (line <span class="line-number">1381</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the details of a log record</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getLogIDDetail
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sTableName</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetPhpidsLibPath" id="getPhpidsLibPath"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPhpidsLibPath</span> (line <span class="line-number">350</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the PHPIDS lib directory.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The path to the PHPIDS lib directory</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getPhpidsLibPath
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodlogError" id="logError"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">logError</span> (line <span class="line-number">360</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Error handling, writes errors to the MODx system log</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			logError
+		</span>
+					(<span class="var-type">object</span>&nbsp;<span class="var-name">$oError</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$oError</span><span class="var-description">: Exception</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetCsvDelimiter" id="setCsvDelimiter"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setCsvDelimiter</span> (line <span class="line-number">1708</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the delimiter for the CSV export</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setCsvDelimiter
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span><span class="var-description">: The delimiter for the CSV export</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetCsvEnclosure" id="setCsvEnclosure"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setCsvEnclosure</span> (line <span class="line-number">1718</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the enclosure for the CSV export</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setCsvEnclosure
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span><span class="var-description">: The enclosure for the CSV export</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetPhpidsLibPath" id="setPhpidsLibPath"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setPhpidsLibPath</span> (line <span class="line-number">340</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the PHPIDS lib directory.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setPhpidsLibPath
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span><span class="var-description">: The path to the PHPIDS lib directory</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetTableName" id="setTableName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setTableName</span> (line <span class="line-number">326</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the table names with the prefixes, or not.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> If $id or $name is empty</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setTableName
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: Contains the table name</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: id Contains the table identifier</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetTableNames" id="setTableNames"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setTableNames</span> (line <span class="line-number">310</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the table names with the prefixes, or not.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> If $tableNames is not an array</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setTableNames
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$tableNames</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$tableNames</span><span class="var-description">: Contains all table names</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodunBlockIP" id="unBlockIP"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">unBlockIP</span> (line <span class="line-number">1353</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Removes an IP-address from the database, that will not be blocked further on by the plugin</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			unBlockIP
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sIPAddress</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sIPAddress</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sTableName</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodupdateDefaultFilter" id="updateDefaultFilter"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">updateDefaultFilter</span> (line <span class="line-number">1537</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Updates the local filter with new filter from www.phpids.org and returns a  new text for the FilterUpdate div.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			updateDefaultFilter
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodupdateLogTable" id="updateLogTable"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">updateLogTable</span> (line <span class="line-number">445</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Update the log table.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			updateLogTable
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sTableName</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constDEFAULT_FONT_SIZE" id="DEFAULT_FONT_SIZE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DEFAULT_FONT_SIZE</span>
+			 = <span class="const-default"> 0.8</span>
+			(line <span class="line-number">85</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant float DEFAULT_FONT_SIZE The default is 0.8, all values are used as em</p>
+	
+	
+</div>
+<a name="constDEFAULT_FONT_SIZE_DIALOG" id="DEFAULT_FONT_SIZE_DIALOG"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DEFAULT_FONT_SIZE_DIALOG</span>
+			 = <span class="const-default"> 0.6</span>
+			(line <span class="line-number">90</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant float DEFAULT_FONT_SIZE_DIALOG The default is 0.6, all values are used as em</p>
+	
+	
+</div>
+<a name="constDEFAULT_LANGUAGE" id="DEFAULT_LANGUAGE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DEFAULT_LANGUAGE</span>
+			 = <span class="const-default"> 'english'</span>
+			(line <span class="line-number">80</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant string Default language is English</p>
+	
+	
+</div>
+<a name="constDEFAULT_ROW_COUNT" id="DEFAULT_ROW_COUNT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DEFAULT_ROW_COUNT</span>
+			 = <span class="const-default"> 20</span>
+			(line <span class="line-number">95</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant int Default row count of the tables</p>
+	
+	
+</div>
+<a name="constDEFAULT_WINDOWS_WIDTH" id="DEFAULT_WINDOWS_WIDTH"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DEFAULT_WINDOWS_WIDTH</span>
+			 = <span class="const-default"> 450</span>
+			(line <span class="line-number">160</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant integer with the default with for modal windows</p>
+	
+	
+</div>
+<a name="constFIELD_SEPARATOR" id="FIELD_SEPARATOR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FIELD_SEPARATOR</span>
+			 = <span class="const-default"> '|'</span>
+			(line <span class="line-number">100</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant string field separator</p>
+	
+	
+</div>
+<a name="constINFOSNIPER" id="INFOSNIPER"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">INFOSNIPER</span>
+			 = <span class="const-default"> 'http://www.infosniper.net/index.php?ip_address=%s'</span>
+			(line <span class="line-number">155</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant string contains the infosniper address to check the IP addresses</p>
+	
+	
+</div>
+<a name="constNEWS_RSS_URI" id="NEWS_RSS_URI"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">NEWS_RSS_URI</span>
+			 = <span class="const-default"> 'http://www.stefanie-stoelting.de/phpids-news-rss-feed.html'</span>
+			(line <span class="line-number">130</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant string with the uri to the news</p>
+	
+	
+</div>
+<a name="constPAGER_ID" id="PAGER_ID"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PAGER_ID</span>
+			 = <span class="const-default"> 'div_pager'</span>
+			(line <span class="line-number">110</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant string table pager id</p>
+	
+	
+</div>
+<a name="constPHPIDS_DEFAULT_FILTER_URI" id="PHPIDS_DEFAULT_FILTER_URI"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PHPIDS_DEFAULT_FILTER_URI</span>
+			 = <span class="const-default"> 'https://dev.itratos.de/projects/php-ids/repository/raw/trunk/lib/IDS/default_filter.xml'</span>
+			(line <span class="line-number">120</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant string with the uri to the current PHPIDS default filter</p>
+	
+	
+</div>
+<a name="constPHPIDS_FILTER_RSS_URI" id="PHPIDS_FILTER_RSS_URI"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PHPIDS_FILTER_RSS_URI</span>
+			 = <span class="const-default"> 'https://trac.phpids.org/index.fcgi/log/trunk/lib/IDS/default_filter.xml?limit=1&amp;format=rss'</span>
+			(line <span class="line-number">115</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant string with the uri to the PHPIDS filter RSS</p>
+	
+	
+</div>
+<a name="constPHPIDS_TEST_URI" id="PHPIDS_TEST_URI"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PHPIDS_TEST_URI</span>
+			 = <span class="const-default"> 'http://demo.phpids.org/?test=%s'</span>
+			(line <span class="line-number">125</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant string with the location of the PHPIDS test URI</p>
+	
+	
+</div>
+<a name="constPLUGIN_VERSION" id="PLUGIN_VERSION"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PLUGIN_VERSION</span>
+			 = <span class="const-default"> '0.7.1.2'</span>
+			(line <span class="line-number">165</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant string with the current version of the MODX PHPIDS implementation</p>
+	
+	
+</div>
+<a name="constRIPE" id="RIPE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">RIPE</span>
+			 = <span class="const-default"> 'http://www.db.ripe.net/whois?form_type=simple&amp;full_query_string=&amp;searchtext=%s&amp;do_search=Search'</span>
+			(line <span class="line-number">150</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant string Contains the ripe address to check the IP addresses</p>
+	
+	
+</div>
+<a name="constTABLE_ID" id="TABLE_ID"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TABLE_ID</span>
+			 = <span class="const-default"> 'table_logdata'</span>
+			(line <span class="line-number">105</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant string table logdata ID</p>
+	
+	
+</div>
+<a name="constTABLE_NAME_BLOCK" id="TABLE_NAME_BLOCK"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TABLE_NAME_BLOCK</span>
+			 = <span class="const-default"> 'phpids_block'</span>
+			(line <span class="line-number">140</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant string name of the block table</p>
+	
+	
+</div>
+<a name="constTABLE_NAME_INTRUSIONS" id="TABLE_NAME_INTRUSIONS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TABLE_NAME_INTRUSIONS</span>
+			 = <span class="const-default"> 'phpids_intrusions'</span>
+			(line <span class="line-number">135</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant string name of the intrusion table</p>
+	
+	
+</div>
+<a name="constTABLE_NAME_OPTIONS" id="TABLE_NAME_OPTIONS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TABLE_NAME_OPTIONS</span>
+			 = <span class="const-default"> 'phpids_options'</span>
+			(line <span class="line-number">145</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant string name of the options table</p>
+	
+	
+</div>
+<a name="constTYPE_BLOCK_IP" id="TYPE_BLOCK_IP"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TYPE_BLOCK_IP</span>
+			 = <span class="const-default"> 3</span>
+			(line <span class="line-number">40</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant integer Defines blockIP</p>
+	
+	
+</div>
+<a name="constTYPE_DELETE_LOG_RECORD" id="TYPE_DELETE_LOG_RECORD"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TYPE_DELETE_LOG_RECORD</span>
+			 = <span class="const-default"> 9</span>
+			(line <span class="line-number">65</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant integer Defines the deleteLogRecord</p>
+	
+	
+</div>
+<a name="constTYPE_GET_BLOCKED_DATA" id="TYPE_GET_BLOCKED_DATA"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TYPE_GET_BLOCKED_DATA</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">35</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant integer Defines getBlockedData</p>
+	
+	
+</div>
+<a name="constTYPE_GET_BLOCK_IDDETAIL" id="TYPE_GET_BLOCK_IDDETAIL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TYPE_GET_BLOCK_IDDETAIL</span>
+			 = <span class="const-default"> 7</span>
+			(line <span class="line-number">55</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant integer Defines the getLogIDDetail</p>
+	
+	
+</div>
+<a name="constTYPE_GET_CSV" id="TYPE_GET_CSV"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TYPE_GET_CSV</span>
+			 = <span class="const-default"> 11</span>
+			(line <span class="line-number">75</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant integer Defines the exportIntrusionsAsCSV</p>
+	
+	
+</div>
+<a name="constTYPE_GET_LOG_CONTENT" id="TYPE_GET_LOG_CONTENT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TYPE_GET_LOG_CONTENT</span>
+			 = <span class="const-default"> 0</span>
+			(line <span class="line-number">25</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant integer Defines getLogContent</p>
+	
+	
+</div>
+<a name="constTYPE_GET_LOG_DATA" id="TYPE_GET_LOG_DATA"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TYPE_GET_LOG_DATA</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">30</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant integer Defines getLogData</p>
+	
+	
+</div>
+<a name="constTYPE_GET_LOG_IDDETAIL" id="TYPE_GET_LOG_IDDETAIL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TYPE_GET_LOG_IDDETAIL</span>
+			 = <span class="const-default"> 6</span>
+			(line <span class="line-number">50</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant integer Defines the getLogIDDetail</p>
+	
+	
+</div>
+<a name="constTYPE_TRUNCATE_LOG" id="TYPE_TRUNCATE_LOG"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TYPE_TRUNCATE_LOG</span>
+			 = <span class="const-default"> 8</span>
+			(line <span class="line-number">60</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant integer Defines the emptyLogTable</p>
+	
+	
+</div>
+<a name="constTYPE_UNBLOCK_IP" id="TYPE_UNBLOCK_IP"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TYPE_UNBLOCK_IP</span>
+			 = <span class="const-default"> 4</span>
+			(line <span class="line-number">45</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant integer Defines unBlockIP</p>
+	
+	
+</div>
+<a name="constTYPE_UPDATE_FILTER" id="TYPE_UPDATE_FILTER"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TYPE_UPDATE_FILTER</span>
+			 = <span class="const-default"> 10</span>
+			(line <span class="line-number">70</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant integer Defines the updateDefaultFilter</p>
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Sun, 12 Feb 2012 23:16:32 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>
