@@ -31,8 +31,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  * @link http://phpids.org/
  * @package PHPIDS
  * @license LGPL
- * @since 2012/02/12
- * @version 0.7.1.2
+ * @since 2012/02/18
+ * @version 0.7.1.3
  */
 class phpidsAutoupdate {
   const FILENAME_RULES = 'default_filter.xml';
@@ -185,25 +185,31 @@ class phpidsAutoupdate {
     if (!empty($hash_cache[$filename])) {
       $result = $hash_cache[$filename];
     } else {
- 
-      $url = self::HASH_BASE_URL.$filename;
+
+      $url = self::HASH_BASE_URL . $filename;
 
       $hash_response = $this->fetchUrl($url);
-      
-      if ($hash_response === false) {
-        $result = false;
-      } else {
-        $hash = trim($hash_response);
 
-        if (preg_match("/^[0-9a-f]{40}$/", $hash)) {
-          $hash_cache[$filename] = $hash;
-          $result = $hash;
-        } else {
+      if (!empty($hash_response)) {
+        // phpids.org answered
+        if ($hash_response === false) {
           $result = false;
+        } else {
+          $hash = trim($hash_response);
+
+          if (preg_match("/^[0-9a-f]{40}$/", $hash)) {
+            $hash_cache[$filename] = $hash;
+            $result = $hash;
+          } else {
+            $result = false;
+          }
         }
+      } else {
+        // phpids.org returned an empty result
+        $result = true;
       }
     }
-    
+
     return $result;
   } // getCurrentFileHash
  
