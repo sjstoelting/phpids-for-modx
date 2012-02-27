@@ -31,8 +31,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  * @link http://phpids.org/
  * @package PHPIDS
  * @license LGPL
- * @since 2012/02/18
- * @version 0.7.1.3
+ * @since 2012/02/27
+ * @version 0.7.1.4
  */
 class phpidsAutoupdate {
   const FILENAME_RULES = 'default_filter.xml';
@@ -124,10 +124,12 @@ class phpidsAutoupdate {
   /**
    * Perform a Rule and Converter update if necessary
    *
-   * @return boolean returns false if an error occured
+   * @return array result, message
    */
   public function update() {
-    $result = true;
+    $result = array(
+                  'result' => true
+                , 'message' => '');
          
     // perform updates...
     $result = $this->updateFile(self::FILENAME_RULES);
@@ -143,28 +145,32 @@ class phpidsAutoupdate {
    * Download current file and replaces local
    *
    * @param string FILENAME_RULES or FILENAME_CONVERTER
+   * @return array result, message
    */
   private function updateFile($filename) {
     global $modx;
 
-    $result = true;
+    $result = array(
+                  'result' => true
+                , 'message' => '');
     
     // fetch remote file:
     $file_contents = $this->fetchUrl(self::DOWNLOAD_BASE_URL.$filename);
  
     if ($file_contents === false) {
-      $result = false;
+      $result['result'] = false;
     } else {
       if (sha1($file_contents) != $this->getCurrentFileHash($filename)) {
-        $modx->logEvent(0, 2, sprintf($this->_oTranslation->translate('message_error_updatedownload'), $filename, sha1($file_contents), $this->getCurrentFileHash($filename)), 'PHPIDS Plugin');
-        $result = false;
+        $result['message'] = sprintf($this->_oTranslation->translate('message_error_updatedownload'), $filename, sha1($file_contents), $this->getCurrentFileHash($filename));
+        $modx->logEvent(0, 2, $result['message'], 'PHPIDS Plugin');
+        $result['result'] = false;
       } else {
         if (strlen($file_contents) <= 100) {
-          $result = false;
+          $result['result'] = false;
         } else {
           // overwrite file contents
           if (!file_put_contents($this->phpids_base.$filename, $file_contents)) {
-            $result = false;
+            $result['result'] = false;
           }
         }
       }

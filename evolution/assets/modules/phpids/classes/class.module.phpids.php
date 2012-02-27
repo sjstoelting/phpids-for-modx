@@ -13,8 +13,8 @@
  * @link http://jquery.malsup.com/block/ The jQuery BlockUI Plugin lets you simulate synchronous behavior when using AJAX
  * @package PHPIDS
  * @license LGPL
- * @since 2012/02/18
- * @version 0.7.1.2
+ * @since 2012/02/27
+ * @version 0.7.1.4
  */
 class modulePHPIDS
 {
@@ -162,7 +162,7 @@ class modulePHPIDS
   /**
    * Constant string with the current version of the MODX PHPIDS implementation
    */
-  const PLUGIN_VERSION = '0.7.1.3';
+  const PLUGIN_VERSION = '0.7.1.4';
 
   /**
    * @var Object Object contains the language object with translations
@@ -1540,12 +1540,22 @@ class modulePHPIDS
       // Initialize the auto update class
       $autoUpdate = new phpidsAutoupdate($this->_phpidsLibPath, $this->_translationClassName);
 
-      // Run the update  
-      if ($autoUpdate->update()) {
+      // Run the update
+      $updateResult = $autoUpdate->update();
+      if ($updateResult['result']) {
         $result = '<table class="tableBorder">'
                 . '<tr><td class="tableHead" colspan="2"><h2>' . $this->_oTranslation->translate('caption_ids_version') . '</h2></td></tr>'
                 . '<tr><td class="tableCell" valign="top">' . $this->_oTranslation->translate('caption_filter_update_done') . '</td></tr>'
                 . '</table>';
+      } else if (!empty($updateResult['message'])) {
+        // The update returned an error message. The message is already logged, 
+        // but we should show it to the user
+        $result = '<table class="tableBorder">'
+                . '<tr><td class="tableHead" colspan="2"><h2>' . $this->_oTranslation->translate('caption_ids_version') . '</h2></td></tr>'
+                . '<tr><td class="tableCell" valign="top">' . $updateResult['message'] . '</td></tr>'
+                . '</table>';
+        
+      
       }
 
     return $result;

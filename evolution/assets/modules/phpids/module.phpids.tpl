@@ -7,9 +7,9 @@
  * @link http://phpids.org/
  * @package PHPIDS
  * @license LGPL
- * @since 2012/02/18
- * @version 0.7.1.3
- * <strong>0.7.1.3</strong> A plugin to include PHPIDS into MODx to log and prevent intrusions
+ * @since 2012/02/27
+ * @version 0.7.1.4
+ * <strong>0.7.1.4</strong> A plugin to include PHPIDS into MODx to log and prevent intrusions
  *
  *
  * Module Configuration

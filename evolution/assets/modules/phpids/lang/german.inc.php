@@ -8,8 +8,8 @@
  * @link http://phpids.org/
  * @package PHPIDS
  * @license LGPL
- * @since 2012/02/12
- * @version 0.7.1.2
+ * @since 2012/02/27
+ * @version 0.7.1.4
  */
 class TranslationGerman
 {
@@ -66,7 +66,7 @@ class TranslationGerman
     'title_test_on_phpids'            => 'Smoke Test des Angriffes auf PHPIDS',
     'caption_download_csv'            => 'Download Intrusions als CSF Datei',
     'message_error_autoupdate'        => 'PHPIDS-Update: Ein Fehler ist aufgetreten: %s',
-    'message_error_updatedownload'    => 'PHPIDS-Update: SHA1-hash des Downloads ($s1) ist falsch! (Download nicht m&ouml;glich oder Man-in-the-Middle). SHA1 der Datei im trunk: %s2, SHA1, provided by phpids.org: %s3',
+    'message_error_updatedownload'    => 'PHPIDS-Update: SHA1-hash des Downloads (%1$s) ist falsch! (Download nicht m&ouml;glich oder Man-in-the-Middle). SHA1 der Datei im trunk: %2$s, SHA1, provided by phpids.org: %3$s',
     'caption_update_filter'           => 'Filter:',
     'caption_update_state_ok'         => 'Kein Update verf&uuml;gbar.',
     'caption_update_state_not_ok'     => 'Update verf&uuml;gbar.',
