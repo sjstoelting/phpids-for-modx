@@ -13,8 +13,8 @@
  * @link http://jquery.malsup.com/block/ The jQuery BlockUI Plugin lets you simulate synchronous behavior when using AJAX
  * @package PHPIDS
  * @license LGPL
- * @since 2012/02/27
- * @version 0.7.1.4
+ * @since 2012/03/05
+ * @version 0.7.1.5
  */
 class modulePHPIDS
 {
@@ -390,12 +390,12 @@ class modulePHPIDS
     global $modx;
 
     try {
-      $sSQL = 'CREATE TABLE IF NOT EXISTS `' . mysql_real_escape_string($sTableName) . '` (
-                `id` int(11) unsigned NOT null auto_increment,
-                `ip` varchar(15) character set utf8 collate utf8_bin NOT null,
-                `createdby` varchar(100) character set utf8 collate utf8_bin NOT null,
-                `created` datetime NOT null,
-                PRIMARY KEY  (`id`)
+      $sSQL = 'CREATE TABLE IF NOT EXISTS ' . mysql_real_escape_string($sTableName) . ' (
+                id int(11) unsigned NOT null auto_increment,
+                ip varchar(15) character set utf8 collate utf8_bin NOT null,
+                createdby varchar(100) character set utf8 collate utf8_bin NOT null,
+                created datetime NOT null,
+                PRIMARY KEY  (id)
               ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin ;';
 
       $modx->db->query($sSQL);
@@ -416,17 +416,17 @@ class modulePHPIDS
     global $modx;
 
     try {
-      $sSQL = 'CREATE TABLE IF NOT EXISTS `' . mysql_real_escape_string($sTableName) . '` (
-                `id` int(11) unsigned NOT null auto_increment,
-                `name` varchar(128) character set utf8 collate utf8_bin NOT null,
-                `value` text character set utf8 collate utf8_bin NOT null,
-                `page` varchar(255) character set utf8 collate utf8_bin NOT null,
-                `tags` varchar(128) character set utf8 collate utf8_bin NOT null,
-                `ip` varchar(15) character set utf8 collate utf8_bin NOT null,
-                `impact` int(11) unsigned NOT null,
-                `origin` varchar(15) character set utf8 collate utf8_bin NOT null,
-                `created` datetime NOT null,
-                PRIMARY KEY  (`id`)
+      $sSQL = 'CREATE TABLE IF NOT EXISTS ' . mysql_real_escape_string($sTableName) . ' (
+                id int(11) unsigned NOT null auto_increment,
+                name varchar(128) character set utf8 collate utf8_bin NOT null,
+                value text character set utf8 collate utf8_bin NOT null,
+                page varchar(255) character set utf8 collate utf8_bin NOT null,
+                tags varchar(128) character set utf8 collate utf8_bin NOT null,
+                ip varchar(15) character set utf8 collate utf8_bin NOT null,
+                impact int(11) unsigned NOT null,
+                origin varchar(15) character set utf8 collate utf8_bin NOT null,
+                created datetime NOT null,
+                PRIMARY KEY  (id)
               ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin ;';
 
       $modx->db->query($sSQL);
@@ -449,7 +449,7 @@ class modulePHPIDS
     try {
       $sSQL = 'SELECT COUNT(*) ColumnExists '
              .'FROM information_schema.COLUMNS '
-             .'WHERE TABLE_SCHEMA = \'' . str_replace('`', '', $modx->db->config['dbase']) . '\' '
+             .'WHERE TABLE_SCHEMA = \'' . str_replace('', '', $modx->db->config['dbase']) . '\' '
              .'AND TABLE_NAME = \'' . $sTableName . '\' '
              .'AND COLUMN_NAME = \'ip2\'';
     
@@ -683,7 +683,7 @@ class modulePHPIDS
           );
 
         if (array_search(strtolower($result), $aAvailableColums)) {
-          $result = '`' . mysql_real_escape_string(strtolower($result)) . '`';
+          $result = '' . mysql_real_escape_string(strtolower($result)) . '';
         } else {
           $result = 1;
         }
@@ -1159,7 +1159,7 @@ class modulePHPIDS
       
       $html = new HTML();
 
-      $sSQL = 'SELECT SQL_CALC_FOUND_ROWS `id`, `name`, `value`, `page`, `ip`, `impact`, `origin`, `created` '
+      $sSQL = 'SELECT SQL_CALC_FOUND_ROWS id, name, value, page, ip, impact, origin, created '
             .'FROM ' . $sTableName . ' '
             .'ORDER BY ' . $this->getSortIndex() . ' ' . $this->getSortOrder() . ' '
             .'LIMIT ' . $oTableInfos->iStart . ', ' . $oTableInfos->iLimit;
@@ -1249,7 +1249,7 @@ class modulePHPIDS
 
       $oTableInfos = $this->getTableInfos($sTableName);
 
-      $sSQL = 'SELECT SQL_CALC_FOUND_ROWS `id`, `ip`, `createdby`, `created` '
+      $sSQL = 'SELECT SQL_CALC_FOUND_ROWS id, ip, createdby, created '
             .'FROM ' . $sTableName . ' '
             .'ORDER BY ' . $this->getSortIndex() . ' ' . $this->getSortOrder() . ' '
             .'LIMIT ' . $oTableInfos->iStart . ', ' . $oTableInfos->iLimit;
@@ -1313,7 +1313,7 @@ class modulePHPIDS
 
       $sSQL =  'SELECT Count(*) iRecordCount '
               .'FROM ' . mysql_real_escape_string($sTableName) . ' '
-              .'WHERE `ip` = \'' . mysql_real_escape_string($sIPAddress) . '\'';
+              .'WHERE ip = \'' . mysql_real_escape_string($sIPAddress) . '\'';
 
       $rRecordset =  $modx->db->query($sSQL);
 
@@ -1323,7 +1323,7 @@ class modulePHPIDS
 
       if ($iRecordCount == 0) {
         $sSQL =  'INSERT INTO ' . mysql_real_escape_string($sTableName)
-                . '(`ip`, `createdby`, `created`) '
+                . '(ip, createdby, created) '
                 .'VALUES(\'' . mysql_real_escape_string($sIPAddress) 
                 . '\', \'' . mysql_real_escape_string($aUserInfo['username'])
                 . '\', CURRENT_TIMESTAMP)';
@@ -1358,7 +1358,7 @@ class modulePHPIDS
       $this->createBlockTable($sTableName);
 
       $sSQL = 'DELETE FROM ' . mysql_real_escape_string($sTableName)
-             .' WHERE `ip` = \'' . mysql_real_escape_string($sIPAddress) . '\'';
+             .' WHERE ip = \'' . mysql_real_escape_string($sIPAddress) . '\'';
       $modx->db->query($sSQL);
 
       $result = str_replace('%s', htmlentities($sIPAddress),
@@ -1385,9 +1385,9 @@ class modulePHPIDS
     try {
       $result->iIDLog = $this->getLogID();
 
-      $sSQL = 'SELECT `id`, `name`, `value`, `page`, `ip`, `impact`, `origin`, `created` '
+      $sSQL = 'SELECT id, name, value, page, ip, impact, origin, created '
             .'FROM ' . $sTableName . ' '
-            .'WHERE `id` = ' . $result->iIDLog;
+            .'WHERE id = ' . $result->iIDLog;
 
       $rRecordset =  $modx->db->query($sSQL);
 
@@ -1423,9 +1423,9 @@ class modulePHPIDS
 
       $result->iIDLog = $this->getLogID();
 
-      $sSQL = 'SELECT `id`, `ip`, `createdby`, `created` '
+      $sSQL = 'SELECT id, ip, createdby, created '
             .'FROM ' . mysql_real_escape_string($sTableName) . ' '
-            .'WHERE `id` = ' . $result->iIDLog;
+            .'WHERE id = ' . $result->iIDLog;
 
       $rRecordset =  $modx->db->query($sSQL);
 
@@ -1484,7 +1484,7 @@ class modulePHPIDS
     try {
 
       $sSQL =  'DELETE FROM ' . $sTableName
-             . 'WHERE `id` = ' . $this->getLogID();
+             . 'WHERE id = ' . $this->getLogID();
 
       $modx->db->query($sSQL);
 
@@ -1756,9 +1756,9 @@ class modulePHPIDS
     // Write the header row
     fputcsv($output, $columns, $this->_csvDelimiter, $this->_csvEnclosure);
 
-    $sSQL = 'SELECT SQL_CALC_FOUND_ROWS `id`, `name`, `value`, `page`, `ip`, `impact`, `origin`, `created` '
+    $sSQL = 'SELECT SQL_CALC_FOUND_ROWS id, name, value, page, ip, impact, origin, created '
            .'FROM ' . $sTableName
-           .' ORDER BY `id`';
+           .' ORDER BY id';
 
     // Run the query
     $rRecordset =  $modx->db->query($sSQL);
