@@ -1003,7 +1003,7 @@ class modulePHPIDS
                     ."      confirmed = confirm('" . $this->_oTranslation->translate('message_truncate_log_confirm') . "');\n"
                     ."      if (confirmed == true) {\n"
                     ."        \$.blockUI({message: '<h3>"
-                    .       $this->_oTranslation->translate('caption_truncate_log_progress')
+                    .       $this->_oTranslation->translate('caption_update_filter_progress')
                     .       " <img src=\"" . $this->_sBaseURL . $this->_phpIDSPath . "css/images/ui-anim_basic_16x16.gif\" /></h3>'});\n"
                     ."        \$.get('" . $this->_sBaseURL
                     .           "manager/index.php', {'a':112, 'id':$iModuleID, 'getdata':"
