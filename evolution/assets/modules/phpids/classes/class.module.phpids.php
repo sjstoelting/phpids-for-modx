@@ -534,7 +534,7 @@ class modulePHPIDS
                 .$htmlInclude->getInclude(HtmlInclude::CSS, 'css/ui.jqgrid.css')
                 .$htmlInclude->getInclude(HtmlInclude::CSS, 'css/jquery-ui-1.8.18.custom.css')
                 ."\n"
-                .$htmlInclude->getInclude(HtmlInclude::JAVASCRIPT, 'js/jquery-1.7.1.min.js')
+                .$htmlInclude->getInclude(HtmlInclude::JAVASCRIPT, 'js/jquery-1.7.2.min.js')
                 .$htmlInclude->getInclude(HtmlInclude::JAVASCRIPT, $sJSphpIDSPathFile)
                 .$htmlInclude->getInclude(HtmlInclude::JAVASCRIPT, 'js/jquery.jqGrid-4.3.1.min.js')
                 .$htmlInclude->getInclude(HtmlInclude::JAVASCRIPT, 'js/jquery-ui-1.8.18.custom.min.js')
