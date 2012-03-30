@@ -8,8 +8,8 @@
  * @link http://phpids.org/
  * @package PHPIDS
  * @license LGPL
- * @since 2012/02/27
- * @version 0.7.1.4
+ * @since 2012/03/30
+ * @version 0.7.1.5
  */
 class TranslationEnglish
 {
@@ -64,7 +64,7 @@ class TranslationEnglish
     'title_ripe'                      => 'Get information about the IP address %s from the RIPE database',
     'title_infosniper'                => 'Get information about the IP address %s from Infosniper.net',
     'title_test_on_phpids'            => 'Smoke test of the intrusion on PHPIDS',
-    'caption_download_csv'            => 'Download intrusions as CSF file',
+    'caption_download_csv'            => 'Download intrusions as CSV file',
     'message_error_autoupdate'        => 'PHPIDS-Update: Some error occurred: %s',
     'message_error_updatedownload'    => 'PHPIDS-Update: SHA1-hash of the downloaded file (%1$s) is incorrect! (Download failed or Man-in-the-Middle). SHA1 of the file in the trunk: %2$s, SHA1, provided by phpids.org: %3$s',
     'caption_update_filter'           => 'Filter:',
