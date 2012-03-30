@@ -8,8 +8,8 @@
  * @link http://phpids.org/
  * @package PHPIDS
  * @license LGPL
- * @since 2012/02/27
- * @version 0.7.1.4
+ * @since 2012/03/30
+ * @version 0.7.1.5
  */
 class TranslationGerman
 {
@@ -34,16 +34,16 @@ class TranslationGerman
     'caption_created'                 => 'Angelegt',
     'caption_createdby'               => 'Angelegt von',
     'caption_block_button'            => 'IP blocken',
-    'caption_unblock_button'          => 'IP nicht blocken',
-    'message_ip_blocked'              => 'Die IP Adresse %s ist von nun an geblockt.',
-    'message_ip already_blocked'      => 'Die IP Adresse %s wurde bereits geblocked.',
-    'message_ip_unblocked'            => 'Die IP Adresse %s wird nun nicht mehr geblockt.',
+    'caption_unblock_button'          => 'IP nicht blockieren',
+    'message_ip_blocked'              => 'Die IP Adresse %s ist von nun an blockiert.',
+    'message_ip already_blocked'      => 'Die IP Adresse %s wurde bereits blockiert.',
+    'message_ip_unblocked'            => 'Die IP Adresse %s wird nun nicht mehr blockiert.',
     'title_confirmation'              => 'Bestätigung benötigt',
     'button_close'                    => 'Schließen',
     'button_block_ip'                 => 'IP blockieren?',
     'button_unblock_ip'               => 'IP nicht blockieren?',
     'caption_tab_log_data'            => 'Log Daten',
-    'caption_tab_blocked_data'        => 'Blocked Daten',
+    'caption_tab_blocked_data'        => 'Blockierte Daten',
     'caption_tab_extended'            => 'Erweiterte Optionen',
     'caption_error_log'               => 'PHPIDS Modul',
     'text_error_log'                  => 'Ein Fehler trat in der Datei %1$s auf in Zeile %2$d: %3$s',
@@ -64,7 +64,7 @@ class TranslationGerman
     'title_ripe'                      => 'Information &uuml;ber die IP Adresse %s in der RIPE Datenbank',
     'title_infosniper'                => 'Information &uuml;ber die IP Adresse %s auf Infosniper.net',
     'title_test_on_phpids'            => 'Smoke Test des Angriffes auf PHPIDS',
-    'caption_download_csv'            => 'Download Intrusions als CSF Datei',
+    'caption_download_csv'            => 'Download Intrusions als CSV Datei',
     'message_error_autoupdate'        => 'PHPIDS-Update: Ein Fehler ist aufgetreten: %s',
     'message_error_updatedownload'    => 'PHPIDS-Update: SHA1-hash des Downloads (%1$s) ist falsch! (Download nicht m&ouml;glich oder Man-in-the-Middle). SHA1 der Datei im trunk: %2$s, SHA1, provided by phpids.org: %3$s',
     'caption_update_filter'           => 'Filter:',
@@ -79,10 +79,10 @@ class TranslationGerman
     'caption_ids_version'             => 'IDS Version',
     'caption_download'                => 'Downloads',
     'caption_database'                => 'Datenbank',
-    'caption_version'                 => 'Atkuelle plugin Version',
+    'caption_version'                 => 'Atkuelle Plugin Version',
     'caption_loading_filter_update'   => 'Filter Update wird verarbeitet',
     'caption_filter_update_done'      => 'Das Filter Update erfolgreich beendet.',
-    'caption_filter_update_error'     => 'Das Filter update wurde mit einem Fehler beendet, bitte &uuml;berpr&uuml;fen Sie das System Log.'
+    'caption_filter_update_error'     => 'Das Filter Update wurde mit einem Fehler beendet, bitte &uuml;berpr&uuml;fen Sie das System Log.'
   );
 
 
