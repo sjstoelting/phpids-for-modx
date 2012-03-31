@@ -162,7 +162,7 @@ class modulePHPIDS
   /**
    * Constant string with the current version of the MODX PHPIDS implementation
    */
-  const PLUGIN_VERSION = '0.7.1.4';
+  const PLUGIN_VERSION = '0.7.1.5';
 
   /**
    * @var Object Object contains the language object with translations
