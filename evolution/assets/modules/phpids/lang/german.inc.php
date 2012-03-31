@@ -8,7 +8,7 @@
  * @link http://phpids.org/
  * @package PHPIDS
  * @license LGPL
- * @since 2012/03/30
+ * @since 2012/03/31
  * @version 0.7.1.5
  */
 class TranslationGerman
@@ -39,7 +39,7 @@ class TranslationGerman
     'message_ip already_blocked'      => 'Die IP Adresse %s wurde bereits blockiert.',
     'message_ip_unblocked'            => 'Die IP Adresse %s wird nun nicht mehr blockiert.',
     'title_confirmation'              => 'Bestätigung benötigt',
-    'button_close'                    => 'Schließen',
+    'button_close'                    => 'Schlie&szlig;en',
     'button_block_ip'                 => 'IP blockieren?',
     'button_unblock_ip'               => 'IP nicht blockieren?',
     'caption_tab_log_data'            => 'Log Daten',
@@ -51,7 +51,7 @@ class TranslationGerman
     'message_truncate_log_confirm'    => 'Soll die Log Tabelle wirklich geleert werden?',
     'message_truncate_log'            => 'Alle Einträge in der Log Tabelle gehen dabei verloren.',
     'message_truncated_log'           => 'Die Log Tabelle ist nun leer.',
-    'caption_truncate_log_progress'   => 'Leere Tabelle, bitte warten...',
+    'caption_truncate_log_progress'   => 'Leere Log Tabelle, bitte warten...',
     'button_update_filter'            => 'Update Filter',
     'caption_update_filter'           => 'Es ist ein Filter Update vom %s verf&uuml;gbar',
     'caption_no_filter_updates'       => 'Es ist kein Filter Update verfügbar.',

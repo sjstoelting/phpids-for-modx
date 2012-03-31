@@ -8,7 +8,7 @@
  * @link http://phpids.org/
  * @package PHPIDS
  * @license LGPL
- * @since 2012/03/30
+ * @since 2012/03/31
  * @version 0.7.1.5
  */
 class TranslationEnglish

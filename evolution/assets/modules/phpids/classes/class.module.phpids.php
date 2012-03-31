@@ -13,7 +13,7 @@
  * @link http://jquery.malsup.com/block/ The jQuery BlockUI Plugin lets you simulate synchronous behavior when using AJAX
  * @package PHPIDS
  * @license LGPL
- * @since 2012/03/30
+ * @since 2012/03/31
  * @version 0.7.1.5
  */
 class modulePHPIDS
