@@ -7,7 +7,7 @@
  * @link http://www.stefanie-stoelting.de/
  * @package PHPIDS
  * @license LGPL
- * @since 2011/11/26
+ * @since 2012/10/04
  * @version 0.7
  */
 class HTML
@@ -89,7 +89,7 @@ class HTML
 
   /**
    * Returns the meta tag for content type text/html, charset UTF-8
-   * 
+   *
    * @return string
    */
   public function getMetaContentType()
@@ -180,10 +180,10 @@ class HTML
 
     return $result;
   } // getFormField
-  
+
   /**
    * Returns a completly formatted HTML link
-   * 
+   *
    * @param string $address The address, where the link refers to
    * @param string $identifier Default: empty. The HTML id for the link.
    * @param string $styleClass Default: empty. The CSS style class for this link.
@@ -195,28 +195,28 @@ class HTML
    * @return string
    */
   public function getLink($address, $identifier='', $styleClass='', $title='',
-          $newWindow=false, $text='') 
+          $newWindow=false, $text='')
   {
     if (!empty($styleClass)) {
       $styleClass = 'class="' . $styleClass . '" ';
     }
-    
+
     if (!empty($identifier)) {
       $identifier = 'id="' . $identifier . '" ' ;
     }
-    
+
     if (!empty($title)) {
       $title = 'title="' . $title . '"';
     }
-    
+
     if ($newWindow) {
       $newWindow = 'target="_blank" ';
     }
-    
+
     if (empty($text)) {
       $text = $address;
     }
-    
+
     $result = '<a href="' . $address . '" '
              . $identifier
              . $styleClass
@@ -231,7 +231,7 @@ class HTML
 
   /**
    * Returns a text with bold font weight
-   * 
+   *
    * @param string $text
    * @return string
    */
@@ -239,4 +239,65 @@ class HTML
   {
     return '<strong>' . $text .'</strong>';
   } // getStrong
+
+  /**
+   * Returns a HTML headline
+   *
+   * @param int $type headline number
+   * @param string $text headline text
+   * @param string $class headline CSS class, Default: EmpyStr
+   * @param string $id HTML unique identifier, Default: EmpyStr
+   */
+  public function getH($type, $text, $class='', $id='') {
+    if (!empty($id)) {
+      $id = " id=\"$id\"";
+    }
+    if (!empty($class)) {
+      $class = " class=\"$class\"";
+    }
+
+    if (is_numeric($type)) {
+      $result = '<h' . $type . $id . $class . '>' . $text . '</h' . $type. ">\n";
+    } else {
+        $result = '<h1'. $id . $class . '>' . $text . "</h1>\n";
+    }
+
+    return $result;
+  } // getH
+
+  /**
+   * Returns a HTML paragraph
+   *
+   * @param string $text paragraph text
+   * @param string $class paragraph CSS class, Default: EmpyStr
+   * @param string $id HTML unique identifier, Default: EmpyStr
+   */
+  public function getP($text, $class='', $id='') {
+    if (!empty($id)) {
+      $id = " id=\"$id\"";
+    }
+    if (!empty($class)) {
+      $class = " class=\"$class\"";
+    }
+
+    $result = '<p'. $id . $class . '>' . $text . "</p>\n";
+
+    return $result;
+  } // getP
+
+  /**
+   * Returns a HTML span
+   *
+   * @param string $text span text
+   * @param string $class span CSS class, Default: EmpyStr
+   */
+  public function getSpan($text, $class='') {
+    if (!empty($class)) {
+      $class = " class=\"$class\"";
+    }
+
+    $result = '<span'. $class . '>' . $text . "</span>\n";
+
+    return $result;
+  } // getSpan
 } // html
