@@ -7,7 +7,7 @@
  * @link http://www.stefanie-stoelting.de/
  * @package PHPIDS
  * @license LGPL
- * @since 2012/10/04
+ * @since 2012/10/05
  * @version 0.7
  */
 class HTML
@@ -47,6 +47,23 @@ class HTML
   } // __construct
 
   /**
+   * validates an url string
+   *
+   * @param string $url The url
+   * @return boolean Whether the url is valid, or not
+   */
+  public function isValidURL($url)
+  {
+    if (substr($url, 0, 1) == '#') {
+      $result = true;
+    } else {
+      $result = preg_match('|^http(s)?://[a-z0-9-]+(.[a-z0-9-]+)*(:[0-9]+)?(/.*)?$|i', $url);
+    }
+ 
+    return $result;
+  } // isValidURL
+
+     /**
    * Returns the doc type for XHTML transitional
    *
    * @return string
@@ -197,34 +214,38 @@ class HTML
   public function getLink($address, $identifier='', $styleClass='', $title='',
           $newWindow=false, $text='')
   {
-    if (!empty($styleClass)) {
-      $styleClass = 'class="' . $styleClass . '" ';
-    }
+    if ($this->isValidURL($address)) {
+      if (!empty($styleClass)) {
+        $styleClass = 'class="' . $styleClass . '" ';
+      }
 
-    if (!empty($identifier)) {
-      $identifier = 'id="' . $identifier . '" ' ;
-    }
+      if (!empty($identifier)) {
+        $identifier = 'id="' . $identifier . '" ' ;
+      }
 
-    if (!empty($title)) {
-      $title = 'title="' . $title . '"';
-    }
+      if (!empty($title)) {
+        $title = 'title="' . $title . '"';
+      }
 
-    if ($newWindow) {
-      $newWindow = 'target="_blank" ';
-    }
+      if ($newWindow) {
+        $newWindow = 'target="_blank" ';
+      }
 
-    if (empty($text)) {
-      $text = $address;
-    }
+      if (empty($text)) {
+        $text = $address;
+      }
 
-    $result = '<a href="' . $address . '" '
-             . $identifier
-             . $styleClass
-             . $title
-             . $newWindow
-             . '>'
-             . $text
-             . '</a>';
+      $result = '<a href="' . $address . '" '
+               . $identifier
+               . $styleClass
+               . $title
+               . $newWindow
+               . '>'
+               . $text
+               . '</a>';
+    } else {
+        throw new Exception('The given address is invalid!');
+    }
 
     return $result;
   } // getLink
@@ -248,7 +269,8 @@ class HTML
    * @param string $class headline CSS class, Default: EmpyStr
    * @param string $id HTML unique identifier, Default: EmpyStr
    */
-  public function getH($type, $text, $class='', $id='') {
+  public function getH($type, $text, $class='', $id='')
+  {
     if (!empty($id)) {
       $id = " id=\"$id\"";
     }
@@ -266,13 +288,35 @@ class HTML
   } // getH
 
   /**
+   * Returns a HTML div element
+   *
+   * @param string $content paragraph text
+   * @param string $class paragraph CSS class, Default: EmpyStr
+   * @param string $id HTML unique identifier, Default: EmpyStr
+   */
+  public function getDIV($content, $class='', $id='')
+  {
+    if (!empty($id)) {
+      $id = " id=\"$id\"";
+    }
+    if (!empty($class)) {
+      $class = " class=\"$class\"";
+    }
+
+    $result = '<div'. $id . $class . '>' . $content . "</div>\n";
+
+    return $result;
+  } // getDIV
+
+  /**
    * Returns a HTML paragraph
    *
    * @param string $text paragraph text
    * @param string $class paragraph CSS class, Default: EmpyStr
    * @param string $id HTML unique identifier, Default: EmpyStr
    */
-  public function getP($text, $class='', $id='') {
+  public function getP($text, $class='', $id='')
+  {
     if (!empty($id)) {
       $id = " id=\"$id\"";
     }
@@ -290,14 +334,30 @@ class HTML
    *
    * @param string $text span text
    * @param string $class span CSS class, Default: EmpyStr
+   * @param string $id HTML unique identifier, Default: EmpyStr
    */
-  public function getSpan($text, $class='') {
+  public function getSpan($text, $class='', $id='')
+  {
+    if (!empty($id)) {
+      $id = " id=\"$id\"";
+    }
     if (!empty($class)) {
       $class = " class=\"$class\"";
     }
 
-    $result = '<span'. $class . '>' . $text . "</span>\n";
+    $result = '<span' . $id . $class . '>' . $text . "</span>\n";
 
     return $result;
   } // getSpan
+
+  /**
+   * Returns a HTML linebreak
+   *
+   * @return string The HTML linebreak
+   */
+  public function getBR()
+  {
+    return "<br />\n";
+  } // getBR
+
 } // html
