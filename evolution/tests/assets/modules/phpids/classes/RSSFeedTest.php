@@ -1,7 +1,5 @@
 <?php
-require_once 'PHPUnit/Framework.php';
-
-require_once dirname(__FILE__).'/../../../../../assets/modules/phpids/classes/class.rssfeeds.php';
+require_once dirname(__FILE__).'/../../../../../assets/modules/phpids/classes/class.rssfeed.php';
 
 /**
  * Test class for RSSFeed.

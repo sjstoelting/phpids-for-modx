@@ -1,6 +1,4 @@
 <?php
-require_once 'PHPUnit/Framework.php';
-
 require_once dirname(__FILE__).'/../../../../../assets/modules/phpids/classes/class.uitabs.php';
 
 /**
@@ -158,16 +156,6 @@ class UITabsTest extends PHPUnit_Framework_TestCase
   public function testSetFontSize()
   {
     $this->object->setFontSize('12pt');
-
-    $this->assertTrue(true);
-  } // testSetFontSize
-
-  /**
-   * Sets the tab font size property.
-   */
-  public function testSetFontSize()
-  {
-    $this->object->setTabFontSize('12pt');
 
     $this->assertTrue(true);
   } // testSetFontSize

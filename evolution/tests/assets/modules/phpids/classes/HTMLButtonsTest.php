@@ -1,6 +1,4 @@
 <?php
-require_once 'PHPUnit/Framework.php';
-
 require_once dirname(__FILE__).'/../../../../../assets/modules/phpids/classes/class.htmlbuttons.php';
 
 /**
