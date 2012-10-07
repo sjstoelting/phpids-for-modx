@@ -151,4 +151,12 @@ class HTMLTest extends PHPUnit_Framework_TestCase
             $this->object->getFormField(
             $this->object->getTYPE_TEXT(), $sCaption, $sDataName, true));
   } // testGetFormField
+  
+  /**
+   * Verifes, that the result is realy a line break
+   */
+  public function testGetBR()
+  {
+    $this->assertEquals("<br />\n", $this->object->getBR());
+  } // testGetBR
 } // HTMLTest
