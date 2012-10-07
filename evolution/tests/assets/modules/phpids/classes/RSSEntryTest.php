@@ -179,6 +179,12 @@ class RSSEntryTest extends PHPUnit_Framework_TestCase
    */
   public function testGetSummary()
   {
-    $this->assertEquals(substr(self::TEXT, 0, 50), $this->object->getSummary());
+    $this->object->setText(self::TEXT);
+
+    $this->assertEquals(substr(self::TEXT, 0, 100) . '...', $this->object->getSummary());
+    
+    $this->object->setSummaryLength(50);
+
+    $this->assertEquals(substr(self::TEXT, 0, 50) . '...', $this->object->getSummary());
   } // testGetSummary
 } // RSSEntryTest
