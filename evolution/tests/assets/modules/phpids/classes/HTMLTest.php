@@ -184,6 +184,31 @@ class HTMLTest extends PHPUnit_Framework_TestCase
   } // testGetSpan
 
   /**
+   * Verifies, that the result is a correct p element
+   */
+  public function testGetP()
+  {
+    $id = 'testID';
+    $class = 'testClass';
+
+    $expected = "<p id=\"$id\" class=\"$class\">" . self::TEXT . "</p>\n";
+
+    $this->assertEquals($expected, $this->object->getP(self::TEXT, $class, $id));
+
+    $expected = "<p id=\"$id\">" . self::TEXT . "</p>\n";
+
+    $this->assertEquals($expected, $this->object->getP(self::TEXT, '', $id));
+
+    $expected = "<p class=\"$class\">" . self::TEXT . "</p>\n";
+
+    $this->assertEquals($expected, $this->object->getP(self::TEXT, $class));
+
+    $expected = "<p>" . self::TEXT . "</p>\n";
+
+    $this->assertEquals($expected, $this->object->getP(self::TEXT));
+  } // testGetP
+
+  /**
    * Verifes, that the result is realy a line break
    */
   public function testGetBR()
