@@ -161,6 +161,36 @@ class HTMLTest extends PHPUnit_Framework_TestCase
   /**
    * Verifies, that the result is a correct div element
    */
+  public function testGetH()
+  {
+    $id = 'testID';
+    $class = 'testClass';
+    $headline = substr(self::TEXT, 0, 20);
+
+    $expected = "<h1>" . $headline . "</h1>\n";
+    
+    $this->assertEquals($expected, $this->object->getH(1, $headline));
+
+    $expected = "<h1 class=\"$class\">" . $headline . "</h1>\n";
+    
+    $this->assertEquals($expected, $this->object->getH(1, $headline, $class));
+
+    $expected = "<h1 id=\"$id\" class=\"$class\">" . $headline . "</h1>\n";
+    
+    $this->assertEquals($expected, $this->object->getH(1, $headline, $class, $id));
+
+    $expected = "<h1 id=\"$id\">" . $headline . "</h1>\n";
+    
+    $this->assertEquals($expected, $this->object->getH(1, $headline, '', $id));
+
+    $expected = "<h3 id=\"$id\">" . $headline . "</h3>\n";
+    
+    $this->assertEquals($expected, $this->object->getH(3, $headline, '', $id));
+  } // testGetH
+  
+  /**
+   * Verifies, that the result is a correct div element
+   */
   public function testGetDiv()
   {
     $id = 'testID';
