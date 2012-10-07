@@ -64,15 +64,12 @@ class RSSEntryTest extends PHPUnit_Framework_TestCase
   /**
    * Checks, if the result is a valid datetim.
    */
-  public function testGetDate() 
+  public function testGetDate()
   {
-    if (strtotime($this->object->getDate()) === false) {
-      $result = false;
-    } else {
-      $result = true;
-    }
+    $expected = date(DATE_RSS);
+    $this->object->setDate($expected);
 
-    $this->assertTrue($result);
+    $this->assertEquals($expected, $this->object->getDate());
   } // testGetDate
 
   /**
@@ -87,7 +84,7 @@ class RSSEntryTest extends PHPUnit_Framework_TestCase
   /**
    * Tests, if the timestamp is an integer.
    */
-  public function testGetTimeStamp() 
+  public function testGetTimeStamp()
   {
     $this->assertTrue(is_int($this->object->getTimeStamp()));
   } // testGetTimeStamp
@@ -104,7 +101,7 @@ class RSSEntryTest extends PHPUnit_Framework_TestCase
   /**
    * Verifies, that the link set is equal to the expected link.
    */
-  public function testGetLink() 
+  public function testGetLink()
   {
     $this->assertEquals(self::LINK_URI, $this->object->getLink());
   } // testGetLink
@@ -121,7 +118,7 @@ class RSSEntryTest extends PHPUnit_Framework_TestCase
   /**
    * Verifies, that the title set is equal to the expected title.
    */
-  public function testGetTitle() 
+  public function testGetTitle()
   {
     $this->assertEquals(self::TITLE, $this->object->getTitle());
   } // testGetTitle
@@ -138,7 +135,7 @@ class RSSEntryTest extends PHPUnit_Framework_TestCase
   /**
    * Verifies, that the text set is equal to the expected text.
    */
-  public function testGetText() 
+  public function testGetText()
   {
     $this->assertEquals(self::TEXT, $this->object->getText());
   } // testGetText
@@ -146,7 +143,7 @@ class RSSEntryTest extends PHPUnit_Framework_TestCase
   /**
    * Chechs, whether the summary lenght is the
    */
-  public function testGetSummaryLength() 
+  public function testGetSummaryLength()
   {
     $this->assertEquals(100, $this->object->getSummaryLength());
   } // testGetSummaryLength
@@ -155,7 +152,7 @@ class RSSEntryTest extends PHPUnit_Framework_TestCase
    * Verifies, that the summary length set is equal to the expected summary
    * length.
    */
-  public function testSetSummaryLength() 
+  public function testSetSummaryLength()
   {
     $this->object->setSummaryLength(50);
     $this->assertEquals(50, $this->object->getSummaryLength());
@@ -164,7 +161,7 @@ class RSSEntryTest extends PHPUnit_Framework_TestCase
   /**
    * Verifies, that the summary set is equal to the expected summary.
    */
-  public function testGetSummary() 
+  public function testGetSummary()
   {
     $this->assertEquals(substr(self::TEXT, 0, 50), $this->object->getSummary());
   } // testGetSummary
