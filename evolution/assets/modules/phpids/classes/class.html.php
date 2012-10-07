@@ -345,7 +345,7 @@ class HTML
       $class = " class=\"$class\"";
     }
 
-    $result = '<span' . $id . $class . '>' . $text . "</span>\n";
+    $result = '<span' . $id . $class . '>' . $text . "</span>";
 
     return $result;
   } // getSpan
