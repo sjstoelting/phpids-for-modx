@@ -71,6 +71,8 @@ class HTMLButtonsTest extends PHPUnit_Framework_TestCase
    */
   public function testGetStyleClass() 
   {
+    $this->object->setStyleClass(self::STYLE);
+
     $this->assertEquals(self::STYLE, $this->object->getStyleClass());
   } // testGetStyleClass
 
