@@ -234,15 +234,15 @@ class HTMLButtons
   public function getButton()
   {
     $id = (!empty($this->_id)) ? ' id="' . $this->_id . '"': '';
-    $name = (!empty($this->_name)) ? 'name="' . $this->_name . '"': '';
-    $styleClass = (!empty($this->_styleClass)) ? 'class="' . $this->_styleClass . '"': '';
-    $onClick = (!empty($this->_onClick)) ? 'onclick="' . $this->_onClick . '"': '';
-    $caption = (!empty($this->_caption)) ? 'value="' . $this->_caption . '"': '';
-    $buttonType = (!empty($this->_type)) ? 'value="' . $this->_type . '"': '';
-    $src = (!empty($this->_source)) ? 'value="' . $this->_source . '"': '';
-    $alt = (!empty($this->_alt)) ? 'value="' . $this->_alt . '"': '';
+    $name = (!empty($this->_name)) ? ' name="' . $this->_name . '"': '';
+    $styleClass = (!empty($this->_styleClass)) ? ' class="' . $this->_styleClass . '"': '';
+    $onClick = (!empty($this->_onClick)) ? ' onclick="' . $this->_onClick . '"': '';
+    $caption = (!empty($this->_caption)) ? ' value="' . $this->_caption . '"': '';
+    $buttonType = (!empty($this->_type)) ? ' value="' . $this->_type . '"': '';
+    $src = (!empty($this->_source)) ? ' src="' . $this->_source . '"': '';
+    $alt = (!empty($this->_alt)) ? ' alt="' . $this->_alt . '"': '';
 
-    $result = "  <input type=\"button\" $id $name $styleClass $onClick $buttonType $caption $src $alt />\n";
+    $result = "<input type=\"button\"$id$name$styleClass$onClick$buttonType$caption$src$alt />\n";
 
     return $result;
   } // getButton
