@@ -72,9 +72,10 @@ class HTMLInclude
    *
    * @param string $type allowed is css for CSS and js for JavaScript
    * @param string $fileName the name of the file, may include directories
+   * @param string $media the media for the CSS includes, default = screen
    * @return string The correct HTML include
    */
-  public function getInclude($type, $fileName)
+  public function getInclude($type, $fileName, $media='screen')
   {
     if (in_array($type, $this->_allowedTypes)) {
 
@@ -82,7 +83,7 @@ class HTMLInclude
         case self::CSS:
           $result = '  <link rel="stylesheet" href="'
                    .$this->_basePath . $fileName
-                   ."\" type=\"text/css\" media=\"screen\" />\n";
+                   ."\" type=\"text/css\" media=\"$media\" />\n";
 
           break;
         case self::JAVASCRIPT:
