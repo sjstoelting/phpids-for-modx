@@ -91,6 +91,8 @@ class HTMLButtonsTest extends PHPUnit_Framework_TestCase
    */
   public function testGetCaption() 
   {
+    $this->object->setCaption(self::CAPTION);
+
     $this->assertEquals(self::CAPTION, $this->object->getCaption());
   } // testGetCaption
 
