@@ -46,6 +46,11 @@ class HTMLTest extends PHPUnit_Framework_TestCase
   const META_CONTENTTYPE = "  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
 
   /**
+   * Constant string for text tests
+   */
+  const TEXT = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et';
+
+  /**
    * @var HTML
    */
   protected $object;
@@ -71,7 +76,7 @@ class HTMLTest extends PHPUnit_Framework_TestCase
   /**
    * Verifies, that expected doc type is correct.
    */
-  public function testGetDocTypeXHTMLTransitional() 
+  public function testGetDocTypeXHTMLTransitional()
   {
     $this->assertEquals(self::DOC_TYPE_XHMTL_TRANSITIONAL,
             $this->object->getDocTypeXHTMLTransitional());
@@ -98,7 +103,7 @@ class HTMLTest extends PHPUnit_Framework_TestCase
   /**
    * Verifies, the the expected title tag is correct.
    */
-  public function testGetTitle() 
+  public function testGetTitle()
   {
     $title = 'TEST TITLE';
     $expected = "  <title>$title</title>\n";
@@ -109,7 +114,7 @@ class HTMLTest extends PHPUnit_Framework_TestCase
   /**
    * Verifies, that the expected meta content type is correct.
    */
-  public function testGetMetaContentType() 
+  public function testGetMetaContentType()
   {
     $this->assertEquals(self::META_CONTENTTYPE,
             $this->object->getMetaContentType());
@@ -151,7 +156,15 @@ class HTMLTest extends PHPUnit_Framework_TestCase
             $this->object->getFormField(
             $this->object->getTYPE_TEXT(), $sCaption, $sDataName, true));
   } // testGetFormField
-  
+
+
+  public function testGetSpan()
+  {
+    $expected = "<span id=\"testID\" class=\"testClass\">" . self::TEXT . "</span>";
+
+    $this->assertEquals($expected, $this->object->getSpan(self::TEXT, "testClass", "testID"));
+  } // testGetSpan
+
   /**
    * Verifes, that the result is realy a line break
    */
