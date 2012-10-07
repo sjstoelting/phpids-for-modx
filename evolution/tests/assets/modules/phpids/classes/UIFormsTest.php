@@ -186,6 +186,11 @@ class UIFormsTest extends PHPUnit_Framework_TestCase
    */
   public function testRemoveButton() 
   {
+    $result = $this->object->addButton(self::BUTTON,
+            'Close',
+            "$(this).dialog(\"close\");\n");
+
+    $this->assertTrue($result);
     $this->assertTrue($this->object->removeButton(self::BUTTON));
   } // testRemoveButton
 
