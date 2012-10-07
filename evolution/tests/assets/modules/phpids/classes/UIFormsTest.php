@@ -78,7 +78,8 @@ class UIFormsTest extends PHPUnit_Framework_TestCase
   public function testSetId() 
   {
     $this->object->setId(self::ID);
-    $this->assertTrue(true);
+
+    $this->assertEquals(self::ID, $this->object->getId());
   } // testSetId
 
   /**
