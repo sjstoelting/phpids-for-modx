@@ -156,6 +156,8 @@ class UITabsTest extends PHPUnit_Framework_TestCase
    */
   public function testGetContent() 
   {
+    $this->object->setTab(self::ID_TAB, self::HEADER_TEXT, self::CONTENT);
+
     $this->assertEquals(self::CONTENT, $this->object->getContent(self::ID_TAB));
   } // testGetContent
 
