@@ -89,7 +89,11 @@ class RSSEntryTest extends PHPUnit_Framework_TestCase
    */
   public function testGetTimeStamp() 
   {
-    $this->assertTrue(is_int($this->object->getTimeStamp()));
+    $expected = date(DATE_RSS);
+
+    $this->object->setTimeStamp($expected);
+    
+    $this->assertEquals(strtotime($expected), $this->object->getTimeStamp());
   } // testGetTimeStamp
 
   /**
