@@ -243,6 +243,8 @@ class UIFormsTest extends PHPUnit_Framework_TestCase
    */
   public function testGetJSONaddress() 
   {
+    $this->object->setJSONaddress(self::JSON_ADDRESS);
+
     $this->assertEquals(self::JSON_ADDRESS, $this->object->getJSONaddress());
   } // testGetJSONaddress
 
