@@ -76,5 +76,11 @@ class HTMLIncludeTest extends PHPUnit_Framework_TestCase
                ."\" type=\"text/css\" media=\"screen\" />\n";
 
     $this->assertEquals($expected, $this->object->getInclude(HtmlInclude::CSS, $fileName));
+
+    $expected = '  <link rel="stylesheet" href="'
+               .dirname(__FILE__) . $fileName
+               ."\" type=\"text/css\" media=\"screen, print\" />\n";
+
+    $this->assertEquals($expected, $this->object->getInclude(HtmlInclude::CSS, $fileName, 'screen, print'));
   } // testGetInclude
 } // HTMLIncludeTest
