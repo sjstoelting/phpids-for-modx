@@ -13,7 +13,7 @@ require_once dirname(__FILE__).'/../../../../../assets/modules/phpids/classes/cl
  * @since 2011/01/30
  * @version 0.6.5.alpha2
  */
-class HtmlIncludeTest extends PHPUnit_Framework_TestCase
+class HTMLIncludeTest extends PHPUnit_Framework_TestCase
 {
   /**
    * @var HtmlInclude
@@ -26,7 +26,7 @@ class HtmlIncludeTest extends PHPUnit_Framework_TestCase
    */
   protected function setUp()
   {
-    $this->object = new HtmlInclude;
+    $this->object = new HTMLInclude;
   } // setUp
 
   /**
@@ -65,4 +65,4 @@ class HtmlIncludeTest extends PHPUnit_Framework_TestCase
 
     $this->assertEquals($expected, $this->object->getInclude('css', $fileName));
   } // testGetInclude
-} // HtmlIncludeTest
+} // HTMLIncludeTest

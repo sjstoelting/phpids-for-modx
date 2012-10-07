@@ -490,7 +490,7 @@ class modulePHPIDS
       }
 
       // Create the HTML include variable for easier including CSS and JavaScript files
-      $htmlInclude = new HtmlInclude($this->_sBaseURL . $this->_phpIDSPath);
+      $htmlInclude = new HTMLInclude($this->_sBaseURL . $this->_phpIDSPath);
       $uiTabs = new UITabs();
       $html = new HTML();
 

@@ -10,7 +10,7 @@
  * @since 2011/11/26
  * @version 0.7
  */
-class HtmlInclude
+class HTMLInclude
 {
   /**
    * String constant for CSS includes
@@ -98,4 +98,4 @@ class HtmlInclude
       throw new Exception('$type is not one of the allowed types');
     }
   } // getInclude
-} // HtmlInclude
+} // HTMLInclude
