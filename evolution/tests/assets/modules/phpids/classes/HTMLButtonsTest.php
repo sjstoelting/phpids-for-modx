@@ -59,7 +59,7 @@ class HTMLButtonsTest extends PHPUnit_Framework_TestCase
   /**
    * Sets the style class property.
    */
-  public function testSetStyleClass() 
+  public function testSetStyleClass()
   {
     $this->object->setStyleClass(self::STYLE);
 
@@ -69,7 +69,7 @@ class HTMLButtonsTest extends PHPUnit_Framework_TestCase
   /**
    * Tests style class
    */
-  public function testGetStyleClass() 
+  public function testGetStyleClass()
   {
     $this->object->setStyleClass(self::STYLE);
 
@@ -79,7 +79,7 @@ class HTMLButtonsTest extends PHPUnit_Framework_TestCase
   /**
    * Sets the button caption (value) property.
    */
-  public function testSetCaption() 
+  public function testSetCaption()
   {
     $this->object->setCaption(self::CAPTION);
 
@@ -89,7 +89,7 @@ class HTMLButtonsTest extends PHPUnit_Framework_TestCase
   /**
    * Tests the button caption (value).
    */
-  public function testGetCaption() 
+  public function testGetCaption()
   {
     $this->object->setCaption(self::CAPTION);
 
@@ -99,7 +99,7 @@ class HTMLButtonsTest extends PHPUnit_Framework_TestCase
   /**
    * Sets the onClick property.
    */
-  public function testSetOnClick() 
+  public function testSetOnClick()
   {
     $this->object->setOnClick(self::ON_CLICK);
 
@@ -109,7 +109,7 @@ class HTMLButtonsTest extends PHPUnit_Framework_TestCase
   /**
    * Tests the button onClick.
    */
-  public function testGetOnClick() 
+  public function testGetOnClick()
   {
     $this->object->setOnClick(self::ON_CLICK);
 
@@ -119,7 +119,7 @@ class HTMLButtonsTest extends PHPUnit_Framework_TestCase
   /**
    * Sets the button name property.
    */
-  public function testSetName() 
+  public function testSetName()
   {
     $this->object->setName(self::NAME);
 
@@ -129,7 +129,7 @@ class HTMLButtonsTest extends PHPUnit_Framework_TestCase
   /**
    * Tests the button name.
    */
-  public function testGetName() 
+  public function testGetName()
   {
     $this->object->setName(self::NAME);
 
@@ -139,7 +139,7 @@ class HTMLButtonsTest extends PHPUnit_Framework_TestCase
   /**
    * Sets the id property.
    */
-  public function testSetId() 
+  public function testSetId()
   {
     $this->object->setId(self::NAME);
 
@@ -149,7 +149,7 @@ class HTMLButtonsTest extends PHPUnit_Framework_TestCase
   /**
    * Tests the id.
    */
-  public function testGetId() 
+  public function testGetId()
   {
     $this->object->setId(self::NAME);
 
@@ -159,7 +159,7 @@ class HTMLButtonsTest extends PHPUnit_Framework_TestCase
   /**
    * .
    */
-  public function testSetType() 
+  public function testSetType()
   {
     $this->object->setType(HTMLButtons::TYPE_SUBMIT);
   } // testSetType
@@ -167,8 +167,28 @@ class HTMLButtonsTest extends PHPUnit_Framework_TestCase
   /**
    * Tests the result of all button properties.
    */
-  public function testGetButton() 
+  public function testGetButton()
   {
-    $this->assertTrue(strpos($this->object->getButton(), HTMLButtons::TYPE_SUBMIT) > 0);
+    $expected = "<input type=\"button\" />\n";
+
+    $this->assertEquals($expected, $this->object->getButton());
+
+    $expected = "<input type=\"button\" id=\"" . self::NAME . "\" />\n";
+    $this->object->setId(self::NAME);
+
+    $this->assertEquals($expected, $this->object->getButton());
+
+    $expected = "<input type=\"button\" id=\"" . self::NAME . "\" name=\"" . self::NAME . "\" />\n";
+    $this->object->setId(self::NAME);
+    $this->object->setName(self::NAME);
+
+    $this->assertEquals($expected, $this->object->getButton());
+
+    $expected = "<input type=\"button\" id=\"" . self::NAME . "\" name=\"" . self::NAME . "\" onclick=\"" . self::ON_CLICK . "\" />\n";
+    $this->object->setId(self::NAME);
+    $this->object->setName(self::NAME);
+    $this->object->setOnClick(self::ON_CLICK);
+
+    $this->assertEquals($expected, $this->object->getButton());
   } // testGetButton
 } // HTMLButtonsTest
