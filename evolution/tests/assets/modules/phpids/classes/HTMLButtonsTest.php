@@ -151,6 +151,8 @@ class HTMLButtonsTest extends PHPUnit_Framework_TestCase
    */
   public function testGetId() 
   {
+    $this->object->setId(self::NAME);
+
     $this->assertEquals(self::NAME, $this->object->getId());
   } // testGetId
 
