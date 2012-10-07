@@ -332,8 +332,8 @@ class UIFormsTest extends PHPUnit_Framework_TestCase
    * Verifies the content is in the the form result
    */
   public function testGetFormJSON() 
-  {
-    $expected = strpos($this->object->getFormJSON(), self::CONTENT);
+  {    
+    $expected = strpos($this->object->getFormJSON(), '$.getJSON');
 
     $this->assertTrue($expected > 0);
   } // testGetFormJSON
