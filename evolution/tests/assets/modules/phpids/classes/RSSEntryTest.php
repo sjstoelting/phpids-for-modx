@@ -111,6 +111,8 @@ class RSSEntryTest extends PHPUnit_Framework_TestCase
    */
   public function testGetLink()
   {
+    $this->object->setLink(self::LINK_URI);
+
     $this->assertEquals(self::LINK_URI, $this->object->getLink());
   } // testGetLink
 
