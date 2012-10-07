@@ -262,7 +262,7 @@ class UIForms
    */
   public function removeButton($name)
   {
-    if (in_array($name, $this->_buttons)) {
+    if (array_key_exists($name, $this->_buttons)) {
       unset($this->_buttons[$name]);
 
       return true;
