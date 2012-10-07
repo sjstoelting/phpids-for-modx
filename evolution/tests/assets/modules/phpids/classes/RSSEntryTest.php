@@ -151,6 +151,8 @@ class RSSEntryTest extends PHPUnit_Framework_TestCase
    */
   public function testGetText()
   {
+    $this->object->setText(self::TEXT);
+
     $this->assertEquals(self::TEXT, $this->object->getText());
   } // testGetText
 
