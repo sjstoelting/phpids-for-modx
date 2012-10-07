@@ -250,7 +250,7 @@ class UIForms
   {
     $this->_buttons[$name] = array('caption' => $caption, 'function' => $function);
 
-    return in_array($name, $this->_buttons);
+    return array_key_exists($name, $this->_buttons);
   } // addButton
 
   /**
