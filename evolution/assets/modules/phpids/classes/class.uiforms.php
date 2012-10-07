@@ -364,7 +364,7 @@ class UIForms
     if (!empty ($name)) {
       $this->_JSONparameters[$name] = $value;
 
-      return in_array($name, $this->_JSONparameters);
+      return array_key_exists($name, $this->_JSONparameters);
     } else {
       throw new Exception('The property cannot have an empty name');
     }
