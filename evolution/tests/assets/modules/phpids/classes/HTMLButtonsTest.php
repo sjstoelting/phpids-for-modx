@@ -103,7 +103,7 @@ class HTMLButtonsTest extends PHPUnit_Framework_TestCase
   {
     $this->object->setOnClick(self::ON_CLICK);
 
-    $this->assertTrue(true);
+    $this->assertEquals(self::ON_CLICK, $this->object->getOnClick());
   } // testSetOnClick
 
   /**
