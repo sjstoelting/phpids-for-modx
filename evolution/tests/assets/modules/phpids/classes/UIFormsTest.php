@@ -323,6 +323,8 @@ class UIFormsTest extends PHPUnit_Framework_TestCase
    */
   public function testGetFunctionName() 
   {
+    $this->object->setFunctionName(self::FUNCTION_NAME);
+
     $this->assertEquals(self::FUNCTION_NAME, $this->object->getFunctionName());
   } // testGetFunctionName
 
