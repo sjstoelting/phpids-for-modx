@@ -43,7 +43,8 @@ class HTMLIncludeTest extends PHPUnit_Framework_TestCase
   public function testSetBasePath()
   {
     $this->object->setBasePath(dirname(__FILE__));
-    $this->assertTrue(true);
+
+    $this->assertEquals(dirname(__FILE__), $this->object->getBasePath());
   } // testSetBasePath
 
   /**
