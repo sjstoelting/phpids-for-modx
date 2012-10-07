@@ -83,7 +83,7 @@ class HTMLButtonsTest extends PHPUnit_Framework_TestCase
   {
     $this->object->setCaption(self::CAPTION);
 
-    $this->assertTrue(true);
+    $this->assertEquals(self::CAPTION, $this->object->getCaption());
   } // testSetCaption
 
   /**
