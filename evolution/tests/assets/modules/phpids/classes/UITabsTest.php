@@ -108,7 +108,8 @@ class UITabsTest extends PHPUnit_Framework_TestCase
   public function testSetTabStyleClass()
   {
     $this->object->setTabStyleClass(self::TAB_CLASS);
-    $this->assertTrue(true);
+
+    $this->assertEquals(self::TAB_CLASS, $this->object->getTabStyleClass());
   } // testSetTabStyleClass
 
   /**
