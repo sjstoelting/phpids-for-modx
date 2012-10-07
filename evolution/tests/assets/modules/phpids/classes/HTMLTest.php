@@ -159,7 +159,7 @@ class HTMLTest extends PHPUnit_Framework_TestCase
 
 
   /**
-   * Verifies, that the result is a correct p element
+   * Verifies, that the result is a correct div element
    */
   public function testGetDiv()
   {
@@ -181,7 +181,7 @@ class HTMLTest extends PHPUnit_Framework_TestCase
     $expected = "<div>" . self::TEXT . "</div>\n";
 
     $this->assertEquals($expected, $this->object->getDIV(self::TEXT));
-  } // testGetP
+  } // testGetDiv
 
   /**
    * Verifies, that the result is a correct p element
