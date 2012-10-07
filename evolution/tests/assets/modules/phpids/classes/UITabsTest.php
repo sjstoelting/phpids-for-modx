@@ -77,6 +77,8 @@ class UITabsTest extends PHPUnit_Framework_TestCase
    */
   public function testGetId() 
   {
+    $this->object->setId(self::ID);
+
     $this->assertEquals(self::ID, $this->object->getId());
   } // testGetId
 
