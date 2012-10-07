@@ -131,6 +131,8 @@ class HTMLButtonsTest extends PHPUnit_Framework_TestCase
    */
   public function testGetName() 
   {
+    $this->object->setName(self::NAME);
+
     $this->assertEquals(self::NAME, $this->object->getName());
   } // testGetName
 
