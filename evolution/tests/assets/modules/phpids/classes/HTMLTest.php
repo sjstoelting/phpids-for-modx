@@ -159,29 +159,29 @@ class HTMLTest extends PHPUnit_Framework_TestCase
 
 
   /**
-   * Verifies, that the result is a correct span element
+   * Verifies, that the result is a correct p element
    */
-  public function testGetSpan()
+  public function testGetDiv()
   {
     $id = 'testID';
     $class = 'testClass';
 
-    $expected = "<span id=\"$id\" class=\"$class\">" . self::TEXT . "</span>";
+    $expected = "<div id=\"$id\" class=\"$class\">" . self::TEXT . "</div>\n";
 
-    $this->assertEquals($expected, $this->object->getSpan(self::TEXT, $class, $id));
+    $this->assertEquals($expected, $this->object->getDIV(self::TEXT, $class, $id));
 
-    $expected = "<span id=\"$id\">" . self::TEXT . "</span>";
+    $expected = "<div id=\"$id\">" . self::TEXT . "</div>\n";
 
-    $this->assertEquals($expected, $this->object->getSpan(self::TEXT, '', $id));
+    $this->assertEquals($expected, $this->object->getDIV(self::TEXT, '', $id));
 
-    $expected = "<span class=\"$class\">" . self::TEXT . "</span>";
+    $expected = "<div class=\"$class\">" . self::TEXT . "</div>\n";
 
-    $this->assertEquals($expected, $this->object->getSpan(self::TEXT, $class));
+    $this->assertEquals($expected, $this->object->getDIV(self::TEXT, $class));
 
-    $expected = "<span>" . self::TEXT . "</span>";
+    $expected = "<div>" . self::TEXT . "</div>\n";
 
-    $this->assertEquals($expected, $this->object->getSpan(self::TEXT));
-  } // testGetSpan
+    $this->assertEquals($expected, $this->object->getDIV(self::TEXT));
+  } // testGetP
 
   /**
    * Verifies, that the result is a correct p element
@@ -207,6 +207,31 @@ class HTMLTest extends PHPUnit_Framework_TestCase
 
     $this->assertEquals($expected, $this->object->getP(self::TEXT));
   } // testGetP
+
+  /**
+   * Verifies, that the result is a correct span element
+   */
+  public function testGetSpan()
+  {
+    $id = 'testID';
+    $class = 'testClass';
+
+    $expected = "<span id=\"$id\" class=\"$class\">" . self::TEXT . "</span>";
+
+    $this->assertEquals($expected, $this->object->getSpan(self::TEXT, $class, $id));
+
+    $expected = "<span id=\"$id\">" . self::TEXT . "</span>";
+
+    $this->assertEquals($expected, $this->object->getSpan(self::TEXT, '', $id));
+
+    $expected = "<span class=\"$class\">" . self::TEXT . "</span>";
+
+    $this->assertEquals($expected, $this->object->getSpan(self::TEXT, $class));
+
+    $expected = "<span>" . self::TEXT . "</span>";
+
+    $this->assertEquals($expected, $this->object->getSpan(self::TEXT));
+  } // testGetSpan
 
   /**
    * Verifes, that the result is realy a line break
