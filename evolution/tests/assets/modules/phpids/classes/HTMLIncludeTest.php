@@ -58,14 +58,23 @@ class HTMLIncludeTest extends PHPUnit_Framework_TestCase
   } // testGetBasePath
 
   /**
-   * @todo Implement testGetInclude().
+   * Verifies, that the include returns the expected HTML include tags
    */
   public function testGetInclude() {
-    $fileName = 'test.css';
+    $this->object->setBasePath(dirname(__FILE__));
+
+    $fileName = 'test.js';
     $expected = '  <script type="text/javascript" src="'
                .dirname(__FILE__) . $fileName
                ."\"></script>\n";
 
-    $this->assertEquals($expected, $this->object->getInclude('css', $fileName));
+    $this->assertEquals($expected, $this->object->getInclude(HtmlInclude::JAVASCRIPT, $fileName));
+
+    $fileName = 'test.css';
+    $expected = '  <link rel="stylesheet" href="'
+               .dirname(__FILE__) . $fileName
+               ."\" type=\"text/css\" media=\"screen\" />\n";
+
+    $this->assertEquals($expected, $this->object->getInclude(HtmlInclude::CSS, $fileName));
   } // testGetInclude
 } // HTMLIncludeTest
