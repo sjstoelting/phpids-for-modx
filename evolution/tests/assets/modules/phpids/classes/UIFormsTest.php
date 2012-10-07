@@ -283,6 +283,8 @@ class UIFormsTest extends PHPUnit_Framework_TestCase
    */
   public function testGetJSONparameter() 
   {
+    $this->object->setJSONparameter(self::JSON_PARAMETER_NAME, self::JSON_PARAMETER_VALUE);
+
     $this->assertEquals(
             self::JSON_PARAMETER_VALUE,
             $this->object->getJSONparameter(self::JSON_PARAMETER_NAME));
