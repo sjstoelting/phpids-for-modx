@@ -162,7 +162,7 @@ class RSSEntry
 
     // Truncate summary line to the defined character length
     if(strlen($summary) > $this->_summaryLength) {
-      $summary = substr($summary, 0, $max_len) . '...';
+      $summary = substr($summary, 0, $this->_summaryLength) . '...';
     }
 
     $this->_summary = $summary;
