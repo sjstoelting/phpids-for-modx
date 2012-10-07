@@ -295,7 +295,7 @@ class UIFormsTest extends PHPUnit_Framework_TestCase
   {
     $this->object->setFormContent(self::CONTENT);
 
-    $this->assertTrue(true);
+    $this->assertEquals(self::CONTENT, $this->object->getFormContent());
   } // testSetFormContent
 
   /**
