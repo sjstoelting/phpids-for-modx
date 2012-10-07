@@ -343,6 +343,7 @@ class UIFormsTest extends PHPUnit_Framework_TestCase
    */
   public function testGetForm()
   {
+    $this->object->setFormContent(self::CONTENT);
     $expected = strpos($this->object->getForm(), self::CONTENT);
 
     $this->assertTrue($expected > 0);
