@@ -146,6 +146,20 @@ class RSSEntry
   } // getText
 
   /**
+   * Truncate summary line to the defined character length
+   *
+   * @param string $text The text for the summary
+   */
+  private function setSummaryText($text)
+  {
+    if(strlen($text) > $this->_summaryLength) {
+      $text = substr($text, 0, $this->_summaryLength) . '...';
+    }
+
+    $this->_summary = $text;
+  } // setSummaryText
+
+  /**
    * Sets the text property and calculates the summary text
    *
    * @param string $value The text property
@@ -161,12 +175,7 @@ class RSSEntry
     $summary = eregi_replace('(<br[ ]?/>)*$', '', $summary);
 
     // Truncate summary line to the defined character length
-    if(strlen($summary) > $this->_summaryLength) {
-      $summary = substr($summary, 0, $this->_summaryLength) . '...';
-    }
-
-    $this->_summary = $summary;
-
+    $this->setSummaryText($summary);
   } // setText
 
   /**
@@ -189,7 +198,7 @@ class RSSEntry
   {
     if (is_int($value)) {
       $this->_summaryLength = $value;
-      $this->_summary = substr($this->_text, 0, $this->_summaryLength);
+      $this->setSummaryText($this->_text);
     } else {
       throw new Exception('The value for summary length is not an integer');
     }
