@@ -111,6 +111,8 @@ class HTMLButtonsTest extends PHPUnit_Framework_TestCase
    */
   public function testGetOnClick() 
   {
+    $this->object->setOnClick(self::ON_CLICK);
+
     $this->assertEquals(self::ON_CLICK, $this->object->getOnClick());
   } // testGetOnClick
 
