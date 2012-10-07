@@ -6,7 +6,7 @@ require_once dirname(__FILE__).'/../../../../../assets/modules/phpids/classes/cl
 /**
  * Test class for HtmlIncludeTest.
  *
- * @author Stefanie Janine Stoelting, mail@stefanie-stoelting.de
+ * @author Stefanie Janine Stoelting<mail@stefanie-stoelting.de>
  * @link http://code.google.com/p/phpids-for-modx/ Project home page
  * @link http://www.stefanie-stoelting.de/
  * @package PHPIDS

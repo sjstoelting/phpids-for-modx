@@ -2,7 +2,7 @@
 /**  
  * @name PHPIDS
  *
- * @author Stefanie Janine Stoelting, mail@stefanie-stoelting.de
+ * @author Stefanie Janine Stoelting<mail@stefanie-stoelting.de>
  * @modification Thomas Jakobi, thomas.jakobi@partout.info
  * @changes Use MODx logging/Use MODx email settings/use MODx Plugin configuration (don't need to patch config.ini and/or plugin code)
  * @link http://code.google.com/p/phpids-for-modx/ Project home page

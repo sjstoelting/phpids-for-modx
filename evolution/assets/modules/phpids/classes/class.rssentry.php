@@ -3,7 +3,7 @@
  * RSS feed
  * @name PHPIDS
  *
- * @author Stefanie Janine Stoelting, mail@stefanie-stoelting.de
+ * @author Stefanie Janine Stoelting<mail@stefanie-stoelting.de>
  * @link http://code.google.com/p/phpids-for-modx/ Project home page
  * @link http://www.stefanie-stoelting.de/
  * @package PHPIDS

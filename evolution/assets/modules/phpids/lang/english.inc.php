@@ -3,7 +3,7 @@
  * Contains english translation
  * @name PHPIDS
  *
- * @author Stefanie Janine Stoelting, mail@stefanie-stoelting.de
+ * @author Stefanie Janine Stoelting<mail@stefanie-stoelting.de>
  * @link http://code.google.com/p/phpids-for-modx/ Project home page
  * @link http://phpids.org/
  * @package PHPIDS
