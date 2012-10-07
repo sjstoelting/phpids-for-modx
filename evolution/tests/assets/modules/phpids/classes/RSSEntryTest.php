@@ -131,6 +131,8 @@ class RSSEntryTest extends PHPUnit_Framework_TestCase
    */
   public function testGetTitle()
   {
+    $this->object->setTitle(self::TITLE);
+
     $this->assertEquals(self::TITLE, $this->object->getTitle());
   } // testGetTitle
 
