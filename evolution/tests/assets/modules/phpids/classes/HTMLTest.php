@@ -158,11 +158,29 @@ class HTMLTest extends PHPUnit_Framework_TestCase
   } // testGetFormField
 
 
+  /**
+   * Verifies, that the result is a correct span element
+   */
   public function testGetSpan()
   {
-    $expected = "<span id=\"testID\" class=\"testClass\">" . self::TEXT . "</span>";
+    $id = 'testID';
+    $class = 'testClass';
 
-    $this->assertEquals($expected, $this->object->getSpan(self::TEXT, "testClass", "testID"));
+    $expected = "<span id=\"$id\" class=\"$class\">" . self::TEXT . "</span>";
+
+    $this->assertEquals($expected, $this->object->getSpan(self::TEXT, $class, $id));
+
+    $expected = "<span id=\"$id\">" . self::TEXT . "</span>";
+
+    $this->assertEquals($expected, $this->object->getSpan(self::TEXT, '', $id));
+
+    $expected = "<span class=\"$class\">" . self::TEXT . "</span>";
+
+    $this->assertEquals($expected, $this->object->getSpan(self::TEXT, $class));
+
+    $expected = "<span>" . self::TEXT . "</span>";
+
+    $this->assertEquals($expected, $this->object->getSpan(self::TEXT));
   } // testGetSpan
 
   /**
