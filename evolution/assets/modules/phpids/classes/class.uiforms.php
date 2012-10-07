@@ -344,7 +344,7 @@ class UIForms
    */
   public function getJSONParameter($name)
   {
-    if (in_array($name, $this->_JSONparameters)) {
+    if (array_key_exists($name, $this->_JSONparameters)) {
       return $this->_JSONparameters[$name];
     } else {
       throw new Exception('A JSON parameter with this name does not exist.');
