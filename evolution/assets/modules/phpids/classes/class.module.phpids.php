@@ -241,6 +241,7 @@ class modulePHPIDS
    * @param integer $DEFAULT_ROW_COUNT The default row count of tables
    * @param string $fontSizeDialog The default font size for dialogs
    * @param array $tableNames The names of the tables
+   * @todo Go through the code and initialize all objects with default values
    */
   function  __construct($language=self::DEFAULT_LANGUAGE,
           $fontSize=self::DEFAULT_FONT_SIZE,
@@ -249,6 +250,8 @@ class modulePHPIDS
           $tableNames=array())
   {
     global $modx;
+    // Throws "Creating default object from empty value" in PHP 5.4
+    ini_set('error_reporting', E_STRICT);
 
     try {
       $language = empty($language) ? self::DEFAULT_LANGUAGE : addslashes($language);
